@@ -15,15 +15,7 @@
       <div class="row equal no-gutters">
         <?php $this->load->view('base_layout/sidebar'); ?>
         <div class="col-12 col-sm-8 col-md-9">
-          <div class="col-12 top-menu-container">
-            <div class="row no-gutters">
-              <div class="top-menu">
-                <div class="bar">
-                  Dummy
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php $this->load->view('base_layout/topmenu'); ?>
           <div class="col-12 wrapper-container">
             <div class="main-wrapper">
               <!-- Silakan masukkan code tampilan divisi Anda di bagian ini. -->
