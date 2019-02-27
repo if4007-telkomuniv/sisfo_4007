@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+
+body {
+  background-color: #efefef;
+}
+
+.sidebar-container {
+  min-height: 100vh;
+  background: #fff;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, .2);
+}
+
+nav .container-fluid {
+  position: relative;
+}
+
+nav .sidebar {
+  width: 100%;
+  position: absolute;
+}
+
+nav .sidebar .headers {
+  height: 50px;
+  display: block;
+  text-align: center;
+}
+
+nav .sidebar .menu {
+  /* padding: 15px; */
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+}
+
+nav .sidebar .menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav .sidebar .menu ul a {
+  color: #191919;
+}
+
+nav .sidebar .menu ul a:hover {
+  text-decoration: none;
+}
+
+nav .sidebar .menu .tree-dropdown {
+  background: #efefef;
+}
+
+nav .sidebar .menu .tree-dropdown li {
+  box-shadow: inset 0px 5px 5px -5px rgba(0, 0, 0, .5);
+}
+
+nav .sidebar .menu .tree-dropdown text {
+  margin-left: 25px;
+}
+
+nav .sidebar .menu ul li {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+nav .sidebar .menu ul li ion-icon {
+  width: 25px;
+  font-size: 20px;
+}
+
+nav .sidebar .menu ul li ion-icon,
+nav .sidebar .menu ul li text {
+  vertical-align: middle;
+}
+
+nav .sidebar .menu ul li text {
+  font-size: 15px;
+}
+
+.top-menu-container {
+  background: white;
+  border-bottom: 2px solid #EE2E24;
+}
+
+.top-menu {
+  position: relative;
+  height: 50px;
+}
+
+.top-menu .bar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
