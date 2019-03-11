@@ -79,8 +79,11 @@ nav .sidebar .menu ul li text {
 }
 
 .top-menu-container {
-  background: white;
-  border-bottom: 2px solid #EE2E24;
+  background-image: linear-gradient(to right, #e41b13, #d31a13, #c21913, #b11813, #a11712);
+  color: #fff;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  z-index: 10;
 }
 
 .top-menu {
@@ -92,6 +95,66 @@ nav .sidebar .menu ul li text {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.top-menu .bar.force-right {
+  position: absolute;
+  right: 10px;
+}
+
+.top-menu .bar .profile-picture {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #dfdfdf;
+}
+
+.top-menu .bar.force-right .profile-popup {
+  top: 25px;
+  width: 300px;
+  position: absolute;
+  right: 0;
+  border-radius: 0 0 5px 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+  color: #191919;
+  padding: 10px;
+}
+
+.top-menu .bar.force-right .profile-popup-body {
+  text-align: center;
+}
+
+.top-menu .bar.force-right .profile-popup-body a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.top-menu .bar.force-right .profile-popup-body .picture {
+  margin: 0 auto;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  background-color: #dfdfdf;
+  margin: 15px auto;
+}
+.top-menu .bar.force-right .profile-popup-body .text {
+  margin-top: 25px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.top-menu .bar.force-right .profile-popup-body .logout {
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #e41b13, #d31a13, #c21913, #b11813, #a11712);
+}
+
+.top-menu .bar.force-right .profile-popup-body .logout:hover {
+  background-image: linear-gradient(to right, #1976d2, #036dd1, #0063d0, #0059ce, #0b4ecb);
 }
 
 /* Main Wrapper */
