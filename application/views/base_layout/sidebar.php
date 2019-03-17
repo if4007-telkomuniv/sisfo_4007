@@ -1,9 +1,11 @@
-<div class="col-12 col-sm-4 col-md-2 p-0 sidebar-container">
+<div class="col-12 col-sm-4 col-md-3 col-xl-2 p-0 sidebar-container">
   <nav>
     <div class="row no-gutters">
       <div class="sidebar">
         <div class="headers">
-          Dummy
+          <div class="">
+
+          </div>
         </div>
         <div class="menu">
           <ul>

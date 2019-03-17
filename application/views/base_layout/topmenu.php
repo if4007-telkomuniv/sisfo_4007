@@ -3,7 +3,7 @@
     <div class="col-10">
       <div class="top-menu">
         <div class="bar">
-          Enterprise Resource Planning Software Telkom Indonesia
+          <a href="#" id="menu-toggle"><ion-icon name="menu"></ion-icon></a>
         </div>
       </div>
     </div>
@@ -42,4 +42,52 @@
       $($(this).attr("href")).toggle();
     })
   });
+</script>
+
+<!-- Script for toggle sidebar menu popup -->
+<script type="text/javascript">
+  $(function() {
+    $(window).resize(function() {
+      if ($(window).width() < 768) {
+        if ($(".sidebar-container").is(":visible")) {
+          $(".sidebar-container").hide();
+          $(".sidebar-container").removeClass("col-9")
+          $(".sidebar-container").addClass("col-12");
+          $(".wrapper").removeClass("visible col-sm-8 col-md-9 col-xl-10");
+          $(".wrapper").addClass("col-12 col-sm-12 col-md-12 col-xl-12");
+        }
+      } else {
+        if ($(".sidebar-container").is(":hidden")) {
+          $(".sidebar-container").show();
+          $(".sidebar-container").removeClass("col-12")
+          $(".sidebar-container").addClass("col-9");
+          $(".wrapper").removeClass("col-12 col-sm-12 col-md-12 col-xl-12");
+          $(".wrapper").addClass("col-sm-8 col-md-9 col-xl-10");
+        }
+      }
+    });
+
+    $("#menu-toggle").on("click", function(e) {
+      e.preventDefault();
+      if ($(".sidebar-container").is(":visible")) {
+        console.log("Is Visible, hiding");
+        $(".sidebar-container").hide();
+        $(".sidebar-container").removeClass("col-9");
+        $(".sidebar-container").addClass("col-12");
+        $(".wrapper").removeClass("visible col-sm-8 col-md-9 col-xl-10");
+        $(".wrapper").addClass("col-12 col-sm-12 col-md-12 col-xl-12");
+      } else {
+        console.log("Is not Visible, showing");
+        $(".sidebar-container").show();
+        $(".sidebar-container").removeClass("col-12")
+        $(".sidebar-container").addClass("col-9");
+        $(".wrapper").removeClass("col-12 col-sm-12 col-md-12 col-xl-12");
+        if ($(window).width() < 768) {
+          $(".wrapper").addClass("visible col-sm-8 col-md-9 col-xl-10");
+        } else {
+          $(".wrapper").addClass("col-sm-8 col-md-9 col-xl-10");
+        }
+      }
+    });
+  })
 </script>
