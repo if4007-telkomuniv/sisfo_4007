@@ -9,20 +9,11 @@
         </div>
         <div class="menu">
           <ul>
-            <a href="#dashboard" data-toggle="collapse">
+            <a href="#">
               <li>
                 <ion-icon name="home"></ion-icon><text>Dashboard</text>
               </li>
             </a>
-            <div id="dashboard" class="collapse tree-dropdown">
-              <ul>
-                <a href="">
-                  <li>
-                    <text>Dashboard</text>
-                  </li>
-                </a>
-              </ul>
-            </div>
             <a href="#">
               <li>
                 <ion-icon name="business"></ion-icon><text>Business Service</text>
