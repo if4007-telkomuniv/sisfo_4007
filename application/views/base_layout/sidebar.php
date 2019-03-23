@@ -65,9 +65,19 @@
             </a>
             <div id="who_service" class="collapse tree-dropdown">
               <ul>
-                <a href="">
+                <a href="<?=base_url('wholesale/invenmasuk');?>">
                   <li>
-                    <text>Inventory</text>
+                    <text>Inventory Pemasukkan</text>
+                  </li>
+                </a>
+                <a href="<?=base_url('wholesale/invenkeluar');?>">
+                  <li>
+                    <text>Inventory Pengeluaran</text>
+                  </li>
+                </a>
+                <a href="<?=base_url('wholesale/stockbarang');?>">
+                  <li>
+                    <text>Stock Barang</text>
                   </li>
                 </a>
               </ul>
