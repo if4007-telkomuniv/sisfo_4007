@@ -9,6 +9,8 @@
 
     <!-- Contoh cara input css, ganti sesuai kebutuhan -->
     <?php /* echo link_tag('css/base_styles.css') */ ?>
+    <?php /* echo link_tag('css/finance.css') */ ?>
+
   </head>
   <body>
     <div class="container-fluid p-0">
@@ -33,29 +35,27 @@
                   <!-- Silakan masukkan code tampilan divisi Anda di bagian ini. -->
 
                   <!-- Dibawah ini adalah template box yang kalian bisa pakai untuk pengembangan sistem -->
-                  <div class="col-8">
+                  <div class="col-4">
                     <div class="box">
-                      <div class="box-header">
-                        Box Header
-                      </div>
                       <div class="box-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                      </div>
-                      <div class="box-footer">
-                        Footer
+                        <button></button>
                       </div>
                     </div>
                   </div>
                   <div class="col-4">
                     <div class="box">
-                      <div class="box-header">
-                        Box Header
-                      </div>
                       <div class="box-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <button></button>
                       </div>
                     </div>
                   </div>
+                  <div class="col-4">
+                    <div class="box">
+                      <div class="box-body">
+                        <button></button>
+                      </div>
+                    </div>
+                  </div>                  
                 </div>
               </div>
             </div>
