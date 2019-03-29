@@ -9,10 +9,7 @@
 
     <!-- Contoh cara input css, ganti sesuai kebutuhan -->
     <?php /* echo link_tag('css/base_styles.css') */ ?>
-<<<<<<< HEAD
     <?php  echo link_tag('css/finance.css') ?>
-
-=======
     <?php /* echo link_tag('css/finance.css') */ ?>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   </head>
@@ -40,21 +37,43 @@
                   <div class="col-4">
                     <div class="box">
                       <div class="box-body">
-                        <a href="#"><img src="<?php echo base_url('css/images/pemasukkan.png'); ?>" class="img-responsive fit-image" alt=""></a>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <img src="<?php echo base_url('css/images/pemasukkan.png'); ?>" class="img-responsive fit-image" alt="">     
+                          </div>
+                          <div class="col-md-8">
+                            <h2>Pemasukkan</h2>
+                          </div>  
+                        </div>                    
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="box">
+                      <div class="box-body">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <img src="<?php echo base_url('css/images/pengeluaran.png'); ?>" class="img-responsive fit-image" alt="">     
+                          </div>
+                          <div class="col-md-8">
+                             <h2>Pengeluaran</h2>
+                          </div>  
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div class="col-4">
                     <div class="box">
                       <div class="box-body">
-                        <button></button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="box">
-                      <div class="box-body">
-                        <button></button>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <img src="<?php echo base_url('css/images/pemesanan.png'); ?>" class="img-responsive fit-image" alt="">     
+                          </div>
+                          <div class="col-md-8">
+                            <h2>Pemesanan</h2>
+                          </div>  
+                        </div>
                       </div>
                     </div>
                   </div>                  
