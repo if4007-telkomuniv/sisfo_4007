@@ -9,7 +9,7 @@
 
     <!-- Contoh cara input css, ganti sesuai kebutuhan -->
     <?php /* echo link_tag('css/base_styles.css') */ ?>
-    <?php /* echo link_tag('css/finance.css') */ ?>
+    <?php  echo link_tag('css/finance.css') ?>
 
   </head>
   <body>
@@ -38,7 +38,7 @@
                   <div class="col-4">
                     <div class="box">
                       <div class="box-body">
-                        <button></button>
+                        <a href="#"><img src="<?php echo base_url('css/images/pemasukkan.png'); ?>" class="img-responsive fit-image" alt=""></a>
                       </div>
                     </div>
                   </div>
