@@ -31,10 +31,10 @@
                   <div class="page-subtitle">
                   </div>
                 </div>
-                <div class="row">
                   <!-- Silakan masukkan code tampilan divisi Anda di bagian ini. -->
                   <!-- Dibawah ini adalah template box yang kalian bisa pakai untuk pengembangan sistem -->
                   <!--tab pemasukkan-->
+                <div class="row">
                   <div class="col-4">
                     <div class="box">
                       <div class="box-body">
@@ -78,7 +78,10 @@
                         </div>
                       </div>
                     </div>
-                  </div>              
+                  </div>            
+                </div>  
+                <br>
+                <div class="row">
                   <!--tab laporan pemasukan-->    
                   <div class="col-4">
                     <div class="box">
@@ -95,20 +98,7 @@
                     </div>
                   </div>
                   <!--tab laporan pengeluaran-->
-                  <div class="col-4">
-                    <div class="box">
-                      <div class="box-body">
-                        <div class="row">
-                          <div class="col-md-4">
-                            <img src="<?php echo base_url('css/images/pemasukkan.png'); ?>" class="img-responsive fit-image" alt="">     
-                          </div>
-                          <div class="col-md-8">
-                            <h2>Laporan Pengeluaran</h2>
-                          </div>  
-                        </div>                    
-                      </div>
-                    </div>
-                  </div>
+
                 </div>
               </div>
             </div>
