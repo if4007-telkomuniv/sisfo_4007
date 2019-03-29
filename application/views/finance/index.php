@@ -107,18 +107,32 @@
       </div>
     </div>
     <?php $this->load->view('base_layout/js_mandatory')?>
-    <!-- Modal -->
+
+<!-- Modal Pemasukkan -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Input Pemasukkan</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <form>
+          <div class="form-group">
+            <input type="number" class="form-control" id="#" placeholder="Nomor Blanko">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="#" placeholder="Keterangan">
+          </div>
+          <div class="form-group">
+            <input type="date" class="form-control" id="#" placeholder="Tanggal" data-date-format="DD/MM/YYYY">
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control" id="#" placeholder="Nominal">
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
