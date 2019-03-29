@@ -9,8 +9,12 @@
 
     <!-- Contoh cara input css, ganti sesuai kebutuhan -->
     <?php /* echo link_tag('css/base_styles.css') */ ?>
+<<<<<<< HEAD
     <?php  echo link_tag('css/finance.css') ?>
 
+=======
+    <?php /* echo link_tag('css/finance.css') */ ?>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   </head>
   <body>
     <div class="container-fluid p-0">
@@ -28,12 +32,10 @@
                   </div>
                   <!-- Subtitle opsional, tapi bila ingin diberi, jelaskan page anda dalam maks 8 kata -->
                   <div class="page-subtitle">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   </div>
                 </div>
                 <div class="row">
                   <!-- Silakan masukkan code tampilan divisi Anda di bagian ini. -->
-
                   <!-- Dibawah ini adalah template box yang kalian bisa pakai untuk pengembangan sistem -->
                   <div class="col-4">
                     <div class="box">
