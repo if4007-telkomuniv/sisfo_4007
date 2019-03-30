@@ -18,8 +18,12 @@ class Template extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
+	public function index(){
 		$this->load->view('template');
 	}
+
+	public function it_support(){
+		$this->load->view('it_support');
+	}
+	
 }

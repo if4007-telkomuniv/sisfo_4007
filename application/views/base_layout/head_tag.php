@@ -11,4 +11,4 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Load Layout Base Tag -->
-<?php echo link_tag('css/base_styles.css'); ?>
+<link rel="stylesheet" type="text/css" href="<?= base_url() ?>css/base_styles.css">
