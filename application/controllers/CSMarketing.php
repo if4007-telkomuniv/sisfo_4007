@@ -25,12 +25,12 @@ class CSMarketing extends CI_Controller {
 
 	public function index()
 	{
-        $data['banner'] = $this->csmarketing_model->getBanner();
+    $data['banner'] = $this->csmarketing_model->getBanner();
 		$data['article'] = $this->csmarketing_model->getArticle();
 		$data['about'] = $this->csmarketing_model->getAbout();
 		$this->load->view('cms-marketing',$data);
     }
-    
+
     public function editBanner($id){
         if(isset($_POST['submit'])){
             $title = $this->input->post('title');
