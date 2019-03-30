@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+$merah_indi : #ec1e37;
+$item_tul : #424242;
+
+body{
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h3, p{
+    margin: 0;
+}
+
+.border-round{
+    border-radius: 0.6em;
+}
+
+.button{
+    cursor: pointer;
+    height: 3em;
+    width: 10em;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: capitalize;
+    font-weight: bold;
+    border: 1px solid $merah_indi;
+    background-color: $merah_indi;
+    color: white;
+    border-radius: 2em;
+    transition: all 0.3s ease-in-out;
+    &:focus{
+        outline: none;
+    }
+
+    &:hover{
+        background-color: white;
+        color: $merah_indi;
+        transition: all 0.5s ease-in-out;
+    }
+}
+
+nav{
+    position: fixed;
+    height: 4em;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    z-index: 2;
+    transition: top 0.3s ease;
+    box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.22);
+    .nav-logo{
+        a img{
+            width: 5em;
+            height: 5em;
+            object-fit: contain;
+        }
+    }
+
+    .nav-link{
+        a{
+            margin-left: 1em;
+            text-transform: uppercase;
+            font-weight: bolder;
+            text-decoration: none;
+            color: $merah_indi;
+        }
+    }
+}
+
+.banner{
+    position: relative;
+    height: 100vh;
+    background-image: url(../img/blur-close-up-display-1350618.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(236,30,52,0.7);
+        // background-image: linear-gradient(to top, rgba(236,30,52,0.9), rgba(255,255,255,0.6));
+        top: 0;
+    }
+
+    h1,p,a{
+        position: relative;
+        z-index: 1;
+    }
+    h1{
+        text-transform: capitalize;
+        color: black;
+        font-weight: bolder;
+        font-size: 4em;
+        color: white;
+    }
+    p{
+        font-size: 1.5em;
+        color: white;
+    }
+    a{
+        cursor: pointer;
+        height: 3em;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        padding: 0 1em;
+        margin-top: 1em;
+        border-radius: 2em;
+        text-transform: capitalize;
+        text-decoration: none;
+        color: $merah_indi;
+        font-weight: bold;
+        border: 2px solid white;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            background-color: $merah_indi;
+            color: white;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}
+
+.product{
+    // background-color: #e0eaf5;
+    height: 15em;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: auto;
+    grid-column-gap: 0.5em;
+    justify-content: center;
+    align-items: center;
+}
+
+.paket{
+    height: 30em;
+    display: grid;
+    grid-template-areas: 
+                        ". . . . . ."
+                        "a a a b b b"
+                        "a a a b b b"
+                        ". . . . . .";
+    grid-gap: 2em;
+    color: white;
+    text-transform: capitalize;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0eaf5;
+    .fantastic {
+        background-image: url(../img/img1.jpg);
+        background-size: cover;
+        padding: 1em;
+        height: 100%;
+        grid-area: a;
+    }
+    .gemah {
+        background-image: url(../img/img2.jpg);
+        background-size: cover;
+        padding: 1em;
+        height: 100%;
+        grid-area: b;
+    }
+    .gemah, .fantastic{
+        box-shadow: 4px 4px 10px -4px rgba(112,112,112,1);
+        h1{
+            margin-bottom: 1em;
+        }
+    }
+ }
+
+ .about{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 40em;
+    margin: 2em 0;
+    padding: 2em;
+    &::after{
+        position: absolute;
+        content: '';
+        display: block;
+        background-color: rgba(236,30,52,0.4);
+        width: 15em;
+        height: 15em;
+        border-radius: 10em;
+        top: 4em;
+        left: 5em;
+    }
+    &::before{
+        position: absolute;
+        content: '';
+        display: block;
+        background-color: rgba(236,30,52,0.4);
+        width: 20em;
+        height: 20em;
+        border-radius: 10em;
+        top: 4em;
+        left: 15em;
+    }
+    .about-img{
+        padding: 3em;
+        img{
+            width: 100%;
+            height: 100%;
+            box-shadow: -1px 12px 24px -5px rgba(0,0,0,0.24);
+        }
+    }
+    .ttg{
+        position: relative;
+        z-index: 1;
+        .tentang{
+            display: flex;
+            align-items: center;
+            margin-bottom: 1em;
+            color: #212121;
+            img{
+                margin-right: 1em;
+            }
+            h3{
+                color: $merah_indi;
+                font-weight: bolder;
+                text-transform: uppercase;
+            }
+        }
+        .p-tentang{
+            color: $item_tul;
+            h1{
+                text-transform: uppercase;
+                line-height: 2em;
+                font-size: 3em;
+            }
+            p{
+                margin-bottom: 1em;
+            }
+        }
+        div.button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a{
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+ }
+
+ article{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin: 2em 0;
+    padding: 2em;
+    color: $item_tul;
+    &::after{
+        position: absolute;
+        content: '';
+        display: block;
+        background-color: rgba(236,30,52,0.4);
+        width: 5em;
+        height: 5em;
+        border-radius: 10em;
+        top: 4em;
+        left: 0;
+    }
+    &::before{
+        position: absolute;
+        content: '';
+        display: block;
+        background-color: rgba(236,30,52,0.4);
+        width: 8em;
+        height: 8em;
+        border-radius: 10em;
+        bottom: 0;
+        right: 0;
+    }
+    h1{
+        text-transform: uppercase;
+        font-size: 2em;
+        margin-bottom: 1em;
+        align-self: center;
+    }
+    p{
+        line-height: 1.5em;
+    }
+ }
+
+ footer{
+    background-color: $merah_indi;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     span{
+         color: white;
+         a{
+             text-decoration: none;
+             color: white;
+         }
+     }
+ }

@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+$merah_indi : #ec1e37;
+
+body{
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.button{
+    cursor: pointer;
+    height: 3em;
+    width: 10em;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: capitalize;
+    border: 0;
+    background-color: $merah_indi;
+    color: white;
+    border-radius: 2em;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+.bor{
+    border-radius: 0.6em;
+}
+
+nav{
+    height: 4em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $merah_indi;
+    padding: 0 3em;
+
+    .nav-logo{
+        a img{
+            width: 10em;
+            height: 2em;
+        }
+    }
+
+    .nav-link{
+        a{
+            margin-left: 1em;
+            text-transform: uppercase;
+            font-weight: bolder;
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+.carousel{
+    margin: 3em 0;
+    .slideshow-container{
+        
+    }
+}
+
+.paket{
+   display: grid;
+   grid-template-columns: repeat(2,400px);
+   grid-template-rows: 250px;
+   grid-gap: 2em;
+   color: white;
+   text-transform: capitalize;
+   font-size: 0.9em;
+   justify-content: center;
+   margin-top: 8em;
+   .fantastic {
+       background-image: url(../img/img1.jpg);
+       background-size: cover;
+       padding: 1em;
+   }
+   .gemah {
+       background-image: url(../img/img2.jpg);
+       background-size: cover;
+       padding: 1em;
+   }  
+}
+
+.content {
+  background-image: url(../img/bgrumah.jpg);
+  height: 25em;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  padding: 3em;
+  .kenali {
+    h1 {
+      font-size: 1.2em;
+    }
+    p {
+      font-size: 1em;
+    }
+  }
+  .pilihan {
+    margin-left: 6em;
+    display: grid;
+    grid-template-columns: repeat(3, 216px);
+    grid-template-rows: 136px;
+    grid-gap: 1em;
+    .whatin {
+      background-image: url(../img/)
+    }
+  }
+}
+
+.addon {
+  display: grid;
+  margin: 3em 2em;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 13em;
+  grid-gap: 3em;
+  .tambahan {
+    background-image: url(../img/addon.png);
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid grey;
+    .pencetan {
+      width: 100%;
+      display: block;
+      border-bottom: 0.6em;
+      a{
+        button{
+          cursor: pointer;
+          width: 100%;
+          border: 0;
+          border-bottom-left-radius: 0.6em;
+          border-bottom-right-radius: 0.6em;
+          padding: 0.5em;
+          background-color: white;
+          color: $merah_indi;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .hooq {
+    background-image: url(../img/hooq.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid grey;
+    .pencetan {
+      width: 100%;
+      display: block;
+      border-bottom: 0.6em;
+      a{
+        button{
+          cursor: pointer;
+          width: 100%;
+          border: 0;
+          border-bottom-left-radius: 0.6em;
+          border-bottom-right-radius: 0.6em;
+          padding: 0.5em;
+          background-color: white;
+          color: $merah_indi;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .iflix {
+    background-image: url(../img/iflix.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid grey;
+    .pencetan {
+      width: 100%;
+      display: block;
+      border-bottom: 0.6em;
+      a{
+        button{
+          cursor: pointer;
+          width: 100%;
+          border: 0;
+          border-bottom-left-radius: 0.6em;
+          border-bottom-right-radius: 0.6em;
+          padding: 0.5em;
+          background-color: white;
+          color: $merah_indi;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .edu {
+    background-image: url(../img/edukids.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid grey;
+    .pencetan {
+      width: 100%;
+      display: block;
+      border-bottom: 0.6em;
+      a{
+        button{
+          cursor: pointer;
+          width: 100%;
+          border: 0;
+          border-bottom-left-radius: 0.6em;
+          border-bottom-right-radius: 0.6em;
+          padding: 0.5em;
+          background-color: white;
+          color: $merah_indi;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
