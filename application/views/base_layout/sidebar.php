@@ -36,7 +36,7 @@
                     <text>CSM Non-Marketing</text>
                   </li>
                 </a>
-                <a href="">
+                <a href="<?= base_url()?>csmarketing">
                   <li>
                     <text>CSM Marketing</text>
                   </li>
