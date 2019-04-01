@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <?php $this->load->view('base_layout/head_tag'); ?>
-    <title>Ini halaman template</title>
+    <title>IT Support</title>
     <!-- Input CSS atau JS yang dibutuhkan setelah line ini -->
     <!-- Taruh file css di folder /css-->
     <!-- Taruh file js di /js-->
@@ -22,7 +22,7 @@
                 <div class="page-header">
                   <!-- Silakan replace sesuai judul halaman divisi kalian -->
                   <div class="page-title">
-                    Dashboard
+                    IT Support
                   </div>
                   <!-- Subtitle opsional, tapi bila ingin diberi, jelaskan page anda dalam maks 8 kata -->
                   <div class="page-subtitle">
@@ -33,29 +33,48 @@
                   <!-- Silakan masukkan code tampilan divisi Anda di bagian ini. -->
 
                   <!-- Dibawah ini adalah template box yang kalian bisa pakai untuk pengembangan sistem -->
-                  <div class="col-8">
+                  <div class="col-6">
                     <div class="box">
                       <div class="box-header">
-                        Box Header
+                        Status Pemasangan
                       </div>
                       <div class="box-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                      </div>
-                      <div class="box-footer">
-                        Footer
+                        Halaman untuk dapat mengetahui jenis status pemasangan yang sedang dilakukan oleh pelanggan
+                        <br><br>
+                        <a href="<?= base_url() ?>its/status_pemasangan" class="btn btn-danger btn-sm">Kunjungi Halaman</a>
                       </div>
                     </div>
                   </div>
-                  <div class="col-4">
+
+                  <div class="col-6">
                     <div class="box">
                       <div class="box-header">
-                        Box Header
+                        Daftar Pelanggan
                       </div>
                       <div class="box-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Halaman yang berfungsi untuk menampilkan dan mengelola daftar pengguna yang tercatat sebagai pelanggan 
+                        <br><br>
+                        <a href="<?= base_url() ?>its/daftar_pelanggan" class="btn btn-danger btn-sm">Kunjungi Halaman</a>
                       </div>
                     </div>
                   </div>
+                </div>
+
+                <div class="row" style="margin-top: 32px">
+
+                  <div class="col-6">
+                    <div class="box">
+                      <div class="box-header">
+                        Komplain
+                      </div>
+                      <div class="box-body">
+                        Halaman yang dapat dipakai oleh pelanggan untuk dapat melakukan keluhan terhadap service yang telah dilakukan
+                        <br><br>
+                        <a href="<?= base_url() ?>its/komplain" class="btn btn-danger btn-sm">Kunjungi Halaman</a>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>

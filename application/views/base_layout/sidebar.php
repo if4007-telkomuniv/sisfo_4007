@@ -9,7 +9,7 @@
         </div>
         <div class="menu">
           <ul>
-            <a href="#">
+            <a href="<?= base_url() ?>">
               <li>
                 <ion-icon name="home"></ion-icon><text>Dashboard</text>
               </li>
@@ -19,7 +19,7 @@
                 <ion-icon name="business"></ion-icon><text>Business Service</text>
               </li>
             </a>
-            <a href="#">
+            <a href="<?= base_url() ?>its">
               <li>
                 <ion-icon name="git-network"></ion-icon><text>IT Support</text>
               </li>
