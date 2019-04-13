@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class CSMarketing extends CI_Controller {
+class Csmarketing extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,15 +20,15 @@ class CSMarketing extends CI_Controller {
 	 */
     public function __construct(){
         parent::__construct();
-        $this->load->model('csmarketing_model');
+        $this->load->model('CSMarketing_model');
     }
 
-	public function index()
-	{
-    $data['banner'] = $this->csmarketing_model->getBanner();
-		$data['article'] = $this->csmarketing_model->getArticle();
-		$data['about'] = $this->csmarketing_model->getAbout();
-		$this->load->view('cms-marketing',$data);
+  	public function index()
+  	{
+      $data['banner'] = $this->CSMarketing_model->getBanner();
+  		$data['article'] = $this->CSMarketing_model->getArticle();
+  		$data['about'] = $this->CSMarketing_model->getAbout();
+  		$this->load->view('cms-marketing',$data);
     }
 
     public function editBanner($id){
@@ -41,7 +41,7 @@ class CSMarketing extends CI_Controller {
                     'keterangan' => $ket
             );
 
-            $update = $this->csmarketing_model->update($id, $input, 'banner');
+            $update = $this->CSMarketing_model->update($id, $input, 'banner');
             if($update){
                 redirect('csmarketing');
             }
@@ -58,7 +58,7 @@ class CSMarketing extends CI_Controller {
                     'isi' => $isi
             );
 
-            $update = $this->csmarketing_model->update($id, $input, 'about');
+            $update = $this->CSMarketing_model->update($id, $input, 'about');
             if($update){
                 redirect('csmarketing');
             }
@@ -75,7 +75,7 @@ class CSMarketing extends CI_Controller {
                     'isi' => $isi
             );
 
-            $update = $this->csmarketing_model->update($id, $input, 'article');
+            $update = $this->CSMarketing_model->update($id, $input, 'article');
             if($update){
                 redirect('csmarketing');
             }
@@ -91,7 +91,7 @@ class CSMarketing extends CI_Controller {
                     'title' => $title,
                     'isi' => $isi
             );
-            $insert = $this->csmarketing_model->insert($input);
+            $insert = $this->CSMarketing_model->insert($input);
             if($insert){
                 redirect('csmarketing');
             }
@@ -99,7 +99,7 @@ class CSMarketing extends CI_Controller {
     }
 
     public function hapusArticle($id){
-        $delete = $this->csmarketing_model->delete($id);
+        $delete = $this->CSMarketing_model->delete($id);
         if($delete){
             redirect('csmarketing');
         }

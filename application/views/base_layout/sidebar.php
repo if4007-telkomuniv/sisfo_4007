@@ -9,7 +9,7 @@
         </div>
         <div class="menu">
           <ul>
-            <a href="<?= base_url() ?>">
+            <a href="<?= base_url() ?>dashboard">
               <li>
                 <ion-icon name="home"></ion-icon><text>Dashboard</text>
               </li>
@@ -31,7 +31,7 @@
             </a>
             <div id="csm_service" class="collapse tree-dropdown">
               <ul>
-                <a href="">
+                <a href="#">
                   <li>
                     <text>CSM Non-Marketing</text>
                   </li>
