@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Template extends CI_Controller {
+class Admin extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,12 +18,8 @@ class Template extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index(){
-		$this->load->view('template');
+	public function index()
+	{
+		$this->load->view('admin');
 	}
-
-	public function it_support(){
-		$this->load->view('it_support');
-	}
-	
 }

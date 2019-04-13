@@ -97,6 +97,14 @@ nav .sidebar .menu ul li text {
   transform: translateY(-50%);
 }
 
+.top-menu .bar a {
+  color: #fff;
+}
+
+.top-menu .bar ion-icon{
+  font-size: 25px;
+}
+
 .top-menu .bar.force-right {
   position: absolute;
   right: 10px;
@@ -158,6 +166,11 @@ nav .sidebar .menu ul li text {
 }
 
 /* Main Wrapper */
+.wrapper.visible {
+  left: 75% !important;
+  position: absolute;
+}
+
 .main-wrapper {
   padding-top: 10px;
   padding-bottom: 10px;

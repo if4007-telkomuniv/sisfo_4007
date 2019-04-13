@@ -1,32 +1,25 @@
-<div class="col-12 col-sm-4 col-md-2 p-0 sidebar-container">
+<div class="col-12 col-sm-4 col-md-3 col-xl-2 p-0 sidebar-container">
   <nav>
     <div class="row no-gutters">
       <div class="sidebar">
         <div class="headers">
-          Dummy
+          <div class="">
+
+          </div>
         </div>
         <div class="menu">
           <ul>
-            <a href="#dashboard" data-toggle="collapse">
+            <a href="<?= base_url() ?>">
               <li>
                 <ion-icon name="home"></ion-icon><text>Dashboard</text>
               </li>
             </a>
-            <div id="dashboard" class="collapse tree-dropdown">
-              <ul>
-                <a href="">
-                  <li>
-                    <text>Dashboard</text>
-                  </li>
-                </a>
-              </ul>
-            </div>
             <a href="#">
               <li>
                 <ion-icon name="business"></ion-icon><text>Business Service</text>
               </li>
             </a>
-            <a href="#">
+            <a href="<?= base_url() ?>its">
               <li>
                 <ion-icon name="git-network"></ion-icon><text>IT Support</text>
               </li>
@@ -43,7 +36,7 @@
                     <text>CSM Non-Marketing</text>
                   </li>
                 </a>
-                <a href="">
+                <a href="<?= base_url()?>csmarketing">
                   <li>
                     <text>CSM Marketing</text>
                   </li>
