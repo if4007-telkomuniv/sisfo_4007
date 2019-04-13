@@ -78,11 +78,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-<<<<<<< HEAD
-	'database' => 'telkomdb',
-=======
 	'database' => 'telkom',
->>>>>>> cd65ec54f3a83c723d8fd1e4677dc3fd1fe16bbe
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
