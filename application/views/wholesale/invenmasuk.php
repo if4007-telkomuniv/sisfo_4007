@@ -9,6 +9,7 @@
 
     <!-- Contoh cara input css, ganti sesuai kebutuhan -->
     <?php /* echo link_tag('css/base_styles.css') */ ?>
+    <?php if($success) {echo "<script type='text/javascript'>alert('Input berhasil');</script>";} ?>
   </head>
   <body>
     <div class="container-fluid p-0">
@@ -41,16 +42,30 @@
                       <div class="box-body">
                           <?=form_open('wholesale/formInvenIN', 'class="was-validated" id="formInvenIN"');?>
                           <div class="form-group">
+                            <label for="supplier">Supplier</label>
+                            <select class="form-control" id="supplier" name="idSupplier">
+                              <?php
+                                foreach($supplier->result() as $s){
+                                  echo '<option value="'.$s->idSupplier.'">'.$s->idSupplier.' - '.$s->namaSupplier.'</option>';
+                                }
+                              ?>
+                            </select>
+                          </div>
+                          <div class="form-group">
                             <label for="namaBarang">Nama Barang</label>
-                            <input type="text" class="form-control" id="namaBarang" placeholder="Nama Barang" name="namaBarang" required>
+                            <input type="text" class="form-control" id="namaBarang" placeholder="Nama barang" name="namaBarang" required>
                             <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Harap diisi.</div>
                           </div>
                           <div class="form-group">
                             <label for="stockBarang">Stock Barang:</label>
-                            <input type="number" class="form-control" id="stockBarang" placeholder="Enter password" name="pswd" required>
+                            <input type="number" class="form-control" id="stockBarang" placeholder="Banyak barang" name="stockBarang" required>
                             <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Harap diisi.</div>
+                          </div>
+                          <div class="form-group">
+                            <label for="keterangan">Keterangan</label>
+                            <input type="text" class="form-control" id="Keterangan" placeholder="Keterangan tambahan." name="keterangan">
                           </div>
                           <button type="submit" class="btn btn-primary">Submit</button>
                       </div>

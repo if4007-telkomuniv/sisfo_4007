@@ -40,9 +40,10 @@ class ModelWholesale extends CI_Model{
     }
 
     public function getLeftJoin($table,$table2){
-        $this->db->select('supplier.idSupplier, supplier.namaSupplier, supplier.deskripsi, kategori.namaKategori');
+        $this->db->select('*');
         $this->db->from($table);
         $this->db->join($table2, 'idKategori' , 'left');
+        $this->db->where('status',1);
         return $this->db->get();
     }
 
@@ -54,8 +55,9 @@ class ModelWholesale extends CI_Model{
         return $this->db->replace('supplier' , $data);
     }
 
-    public function deleteSupplier($id){
-        $this->db->delete('supplier', array('idSupplier' => $id));
+    public function deleteSupplier($data){
+            //$this->db->delete('supplier', array('idSupplier' => $id));
+        return $this->db->replace('supplier' , $data);
     }
 
     public function getIdKategori($table,$namaKategori){

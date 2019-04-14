@@ -75,9 +75,14 @@
                     <text>Inventory Pengeluaran</text>
                   </li>
                 </a>
-                <a href="<?=base_url('wholesale/stockbarang');?>">
+                <a href="<?=base_url('wholesale/stock');?>">
                   <li>
                     <text>Stock Barang</text>
+                  </li>
+                </a>
+                <a href="<?=base_url('wholesale/supplier');?>">
+                  <li>
+                    <text>Supplier</text>
                   </li>
                 </a>
               </ul>

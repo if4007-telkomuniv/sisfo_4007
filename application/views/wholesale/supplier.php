@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <?php $this->load->view('base_layout/head_tag'); ?>
-    <title>Ini halaman template</title>
+    <title>Ini halaman Wholesale</title>
     <!-- Input CSS atau JS yang dibutuhkan setelah line ini -->
     <!-- Taruh file css di folder /css-->
     <!-- Taruh file js di /js-->
@@ -32,7 +32,7 @@
                 <div class="row">
                   <!-- Silakan masukkan code tampilan divisi Anda di bagian ini. -->
 
-                  <!-- Dibawah ini adalah template box yang kalian bisa pakai untuk pengembangan sistem -->
+                  <!-- Dibawah ini adalah Wholesale box yang kalian bisa pakai untuk pengembangan sistem -->
                   <div class="col-8">
                     <div class="box">
                       <div class="box-header">
@@ -60,9 +60,12 @@
                               <td> <?php echo $row->deskripsi; ?> </td>
                               <td> <?php echo $row->namaKategori; ?> </td>
                               <td>
-                                <form action="<?php echo base_url('wholesale/Supplier');?>" method="POST" >
+                                <form action="<?php echo base_url('Wholesale/addSupplier');?>" method="POST" >
                                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<?php echo $row->idSupplier; ?>"><span class="fas fa-edit"></span></button>
                                   <input type="hidden" name="delete" value="<?php echo $row->idSupplier;?>">
+                                  <input type="hidden" name="namaSupplierDelete" value="<?php echo $row->namaSupplier; ?>">
+                                  <input type="hidden" name="deskripsiDelete" value="<?php echo $row->deskripsi; ?>">
+                                  <input type="hidden" name="idKategoriDelete" value="<?php echo $row->idKategori; ?>">
                                   <button class="btn btn-danger" type="submit"><span class="fas fa-trash-alt"></span></button>
                                 </form>
                               </td>
@@ -74,10 +77,12 @@
                         </table>
                       </div>
                       <div class="box-footer">
-
                       </div>
                     </div>
                   </div>
+                  <?php
+                    foreach($resultJoin->result() as $row):
+                  ?>
                   <div class="modal fade" id="<?php echo $row->idSupplier; ?>" tabindex="-1" aria-hidden="true" style="display: none;">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
@@ -87,7 +92,7 @@
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
-                        <form class="form-horizontal row-fluid" action="<?php base_url('wholesale/Supplier')?>" method="POST" enctype="multipart/form-data">
+                        <form class="form-horizontal row-fluid" action="<?php base_url('Wholesale/addSupplier')?>" method="POST" enctype="multipart/form-data">
                           <div class="modal-body">
                             <div class="control-group">
                               <label class="control-label" for="basicinput">Supplier ID</label>
@@ -111,30 +116,45 @@
                             <div class="control-group">
                               <label class="control-label" for="basicinput">Item</label>
                               <div class="controls">
-                                  <input type="text" id="namaKategori" name="namaKategoriEdit" value="<?php echo $row->namaKategori; ?>" class="span8">
+                                  <select class="form-control" id="sel1edit" name="sel1edit">
+                                    <?php   
+                                      foreach($resultKategori->result() as $rowKategori):
+                                    ?>
+                                    <option value="<?php echo $rowKategori->idKategori; ?>"><?php echo $rowKategori->namaKategori; ?></option>
+                                    <?php 
+                                      endforeach;
+                                    ?>
+                                  </select>
                               </div>
                             </div>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
                           </div>
                         </form>
                       </div>
                     </div>
                   </div>
+                  <?php
+                    endforeach;
+                  ?>
                   <div class="col-4">
                     <div class="box">
                       <div class="box-header">
                         Add Supplier Data
                       </div>
                       <div class="box-body">
-                        <form class="form-horizontal row-fluid" action="<?php echo base_url('wholesale/Supplier');?>" method="POST" enctype="multipart/form-data">
-                          <?php?>
+                        <form class="form-horizontal row-fluid" action="<?php echo base_url('Wholesale/addSupplier');?>" method="POST" enctype="multipart/form-data">
+                          <?php 
+                                          
+                          ?>
                           <div class="control-group">
                             <label class="control-label" for="basicinput">Supplier ID</label>
                             <div class="controls">
-                              <?php?>
+                              <?php 
+
+                              ?>
                               <input type="text" id="idSupplier" name="idSupplier" style="width: 100%" placeholder="<?php echo $idSupplierNew ?>" disabled>
                             </div>
                           </div>
@@ -163,7 +183,7 @@
                                     ?>
                                   </select>
                             </div>
-                          </div>        
+                          </div>          
                           <br>
                           <div class="control-group">
                             <div class="controls">

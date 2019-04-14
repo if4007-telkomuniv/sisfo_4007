@@ -39,18 +39,26 @@
                         Form Inventory OUT
                       </div>
                       <div class="box-body">
-                          <?=form_open('wholesale/formInvenIN', 'class="was-validated" id="formInvenOUT"');?>
+                          <?=form_open('wholesale/formInvenOUT', 'class="was-validated" id="formInvenOUT"');?>
                           <div class="form-group">
                             <label for="namaBarang">Nama Barang</label>
-                            <input type="text" class="form-control" id="namaBarang" placeholder="Nama Barang" name="namaBarang" required>
+                            <select class="form-control" id="namaBarang" name="namaBarang">
+                              <?php
+                                foreach($barang->result() as $s){
+                                  echo '<option value="'.$s->idBarang.'">'.$s->idBarang.' - '.$s->namaBarang.'</option>';
+                                }
+                              ?>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="stockBarang">Stock Barang:</label>
+                            <input type="number" class="form-control" id="stockBarang" placeholder="Banyak barang" name="stockBarang" required>
                             <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Harap diisi.</div>
                           </div>
                           <div class="form-group">
-                            <label for="stockBarang">Stock Barang:</label>
-                            <input type="number" class="form-control" id="stockBarang" placeholder="Enter password" name="pswd" required>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Harap diisi.</div>
+                            <label for="keterangan">Keterangan</label>
+                            <input type="text" class="form-control" id="Keterangan" placeholder="Keterangan tambahan." name="keterangan">
                           </div>
                           <button type="submit" class="btn btn-primary">Submit</button>
                       </div>
@@ -66,6 +74,25 @@
         </div>
       </div>
     </div>
+    <script>
+      $(document).ready(function(){
+        $('select#namaBarang').on('change', function() {
+          $.ajax({
+            url: "<?php echo base_url();?>wholesale/getItem",
+            dataType: 'text',
+            type: "POST",
+            success: function (result) {
+                var obj = $.parseJSON(result);
+                $.each(obj,function(index, object) {
+                    if(object['idBarang'] == this.value){
+                        $('input#stockBarang').replaceWith('<input type="number" class="form-control" id="stockBarang" placeholder="Banyak barang" name="stockBarang" min="1" max="'+ object['stockBarang'] +'"required>');
+                    }
+                });
+            }
+          })
+        });
+      });
+    </script>
     <?php $this->load->view('base_layout/js_mandatory')?>
   </body>
 </html>
