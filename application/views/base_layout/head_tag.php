@@ -1,5 +1,6 @@
 <!-- Load Bootstrap 4 CSS | DO NOT REMOVE -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="icon" href="<?php echo base_url("src/img/favicon.ico") ?>">
 
 <!-- Load Bootstrap 4 & Jquery | DO NOT REMOVE -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -11,4 +12,4 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Load Layout Base Tag -->
-<?php echo link_tag('css/base_styles.css'); ?>
+<link rel="stylesheet" type="text/css" href="<?= base_url() ?>css/base_styles.css">
