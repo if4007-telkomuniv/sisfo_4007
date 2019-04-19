@@ -199,7 +199,7 @@
                 <span class="input-group-text" id="basic-addon1">Rp.</span>
               </div>
               <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Pengeluaran / Kredit"
-                name="Kredit">
+                name="kredit">
             </div>
         </div>
         <div class="modal-footer">
