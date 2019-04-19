@@ -53,4 +53,18 @@ class finance extends CI_Controller {
 		$data = array('input' => 1);		
 		$this->load->view('finance/index.php',$data);
 	}	
+	public function laporanpemasukan()
+	{
+		$tanggal1 = $this->input->post('tanggal1');
+		$tanggal2 = $this->input->post('tanggal2');
+		if ($tanggal2 == null){
+			$data['pemasukan'] = $this->M_Finance->laporanpemasukan('M1',$tanggal1);
+		}else{
+			$data['pemasukan'] = $this->M_Finance->laporanpemasukanfull('M1',$tanggal1,$tanggal2);
+		}
+		$this->load->view('finance/laporanpemasukan.php',$data);
+	}
+
+
+	
 }

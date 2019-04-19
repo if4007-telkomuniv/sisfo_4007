@@ -96,7 +96,7 @@
               <br>
               <div class="row">
                 <!--tab laporan pemasukan-->
-                <div class="col-4">
+                <div class="col-4" data-toggle="modal" data-target="#laporanpemasukan">
                   <div class="box">
                     <div class="box-body">
                       <div class="row">
@@ -105,7 +105,7 @@
                             class="img-responsive fit-image" alt="">
                         </div>
                         <div class="col-md-8">
-                          <h2>Laporan Pemasukkan</h2>
+                          <h2>Laporan Pemasukan</h2>
                         </div>
                       </div>
                     </div>
@@ -138,23 +138,23 @@
             <div class="form-group">
               <label for="Blanko">Nomor Blanko</label>
               <input type="text" class="form-control" id="Blanko" aria-describedby="emailHelp"
-                placeholder="Masukan Nomor Blanko" name="blanko">
+                placeholder="Masukan Nomor Blanko" name="blanko" required>
             </div>
             <div class="form-group">
               <label for="tanggal">Tanggal</label>
-              <input type="Date" class="form-control" id="tanggal" placeholder="tanggal" name="tanggal">
+              <input type="Date" class="form-control" id="tanggal" placeholder="tanggal" name="tanggal" required>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Keperluan / Keterangan</label>
               <textarea type="text" class="form-control" id="exampleInputPassword1" placeholder="keperluan"
-                name="keperluan"></textarea>
+                name="keperluan" required></textarea>
             </div>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Rp.</span>
               </div>
               <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Pemasukan / Debit"
-                name="debit">
+                name="debit" required>
             </div>
         </div>
         <div class="modal-footer">
@@ -166,40 +166,77 @@
     </div>
   </div>
 
-  <!-- Modal Pengeluaran-->
+  <!-- Modal pemasukan-->
+  <div class="modal fade" id="laporanpemasukan" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"> Masukan Tanggal</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="<?php echo base_url('Finance/laporanpemasukan'); ?>">
+            <div class="form-group">
+              <label for="tanggal">Tanggal Mulai</label>
+              <input type="Date" class="form-control" id="tanggal" placeholder="tanggal" name="tanggal1" required>
+            </div>
+            <div class="form-group">
+                <label for="tanggal">Tanggal Akhir</label>
+                <input type="Date" class="form-control" id="tanggal" placeholder="tanggal" name="tanggal2" >
+                <small id="emailHelp" class="form-text text-muted">Tidak Wajib</small>
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal pengeluaran-->
+
   <div class="modal fade" id="pengeluaran" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Input Pengeluaran</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Input Pemasukan</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <form method="POST" action="<?php echo base_url('Finance/inputfinance'); ?>">
-            <input type="hidden" class="form-control" id="Blanko" aria-describedby="emailHelp" name="tipe" value="K1">
+            <input type="hidden" class="form-control" id="Blanko" aria-describedby="emailHelp" name="tipe" value="K1" required>
             <div class="form-group">
               <label for="Blanko">Nomor Blanko</label>
               <input type="text" class="form-control" id="Blanko" aria-describedby="emailHelp"
-                placeholder="Masukan Nomor Blanko" name="blanko">
+                placeholder="Masukan Nomor Blanko" name="blanko" required>
             </div>
             <div class="form-group">
               <label for="tanggal">Tanggal</label>
-              <input type="Date" class="form-control" id="tanggal" placeholder="tanggal" name="tanggal">
+              <input type="Date" class="form-control" id="tanggal" placeholder="tanggal" name="tanggal" required>
             </div>
+            <div class="form-group">
+                <label for="tanggal">Hingga Tanggal</label>
+                <input type="Date" class="form-control" id="tanggal" placeholder="tanggal" name="tanggal" required>
+              </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Keperluan / Keterangan</label>
               <textarea type="text" class="form-control" id="exampleInputPassword1" placeholder="keperluan"
-                name="keperluan"></textarea>
+                name="keperluan" required></textarea>
             </div>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Rp.</span>
               </div>
               <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Pengeluaran / Kredit"
-                name="kredit">
+                name="kredit" required>
             </div>
         </div>
         <div class="modal-footer">
