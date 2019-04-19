@@ -2,10 +2,11 @@
 <html lang="en" dir="ltr">
   <head>
     <?php $this->load->view('base_layout/head_tag'); ?>
-    <title>Ini halaman template</title>
+    <title>Dashboard</title>
     <!-- Input CSS atau JS yang dibutuhkan setelah line ini -->
     <!-- Taruh file css di folder /css-->
     <!-- Taruh file js di /js-->
+
 
     <!-- Contoh cara input css, ganti sesuai kebutuhan -->
     <?php /* echo link_tag('css/base_styles.css') */ ?>
@@ -26,38 +27,33 @@
                   </div>
                   <!-- Subtitle opsional, tapi bila ingin diberi, jelaskan page anda dalam maks 8 kata -->
                   <div class="page-subtitle">
-                    Ini tugas bagian Enterprise & Business Service
+
                   </div>
                 </div>
                 <div class="row">
-                  <!-- Silakan masukkan code tampilan divisi Anda di bagian ini. -->
-
-                  <!-- Dibawah ini adalah template box yang kalian bisa pakai untuk pengembangan sistem -->
-                  <div class="col-8">
+								<!-- Silakan masukkan code tampilan divisi Anda di bagian ini. -->
+								<!-- Dibawah ini adalah template box yang kalian bisa pakai untuk pengembangan sistem -->
+								<div class="col-8">
+									<div class="box">
+										<div class="box-header">
+											Dashboard
+										</div>
+										<div class="box-body">
+											<p>
+												<marquee id="test">Selamat Datang Di Aplikasi Telkom Indonesia </marquee>
+											</p>
+										</div>
+									</div>
+								</div>
+                <div class="col-4">
                     <div class="box">
-                      <div class="box-header">
-                        Box Header
-                      </div>
+                    
                       <div class="box-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                      </div>
-                      <div class="box-footer">
-                        Footer
+                        <img src="<?php echo base_url('css/images/telkom.jpg'); ?>" class="img-responsive  fit-image" alt="" height="" width="300">
                       </div>
                     </div>
                   </div>
-                  <div class="col-4">
-                    <div class="box">
-                      <div class="box-header">
-                        Box Header
-                      </div>
-                      <div class="box-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+							</div>
             </div>
           </div>
         </div>
