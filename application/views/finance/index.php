@@ -112,7 +112,37 @@
                   </div>
                 </div>
                 <!--tab laporan pengeluaran-->
-
+                <div class="col-4" data-toggle="modal" data-target="#laporanpengeluaran">
+                    <div class="box">
+                      <div class="box-body">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <img src="<?php echo base_url('css/images/pemasukkan.png'); ?>"
+                              class="img-responsive fit-image" alt="">
+                          </div>
+                          <div class="col-md-8">
+                            <h2>Laporan Pengeluaran</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <!--tab laporan Bukubank-->
+                <div class="col-4" data-toggle="modal" data-target="#cashbank">
+                    <div class="box">
+                      <div class="box-body">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <img src="<?php echo base_url('css/images/pemasukkan.png'); ?>"
+                              class="img-responsive fit-image" alt="">
+                          </div>
+                          <div class="col-md-8">
+                            <h2>CASH AND BANK</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
               </div>
             </div>
           </div>
@@ -166,7 +196,7 @@
     </div>
   </div>
 
-  <!-- Modal pemasukan-->
+  <!-- Modal Lap pemasukan-->
   <div class="modal fade" id="laporanpemasukan" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -197,6 +227,66 @@
       </div>
     </div>
   </div>
+
+    <!-- Modal Lap pengeluaran-->
+    <div class="modal fade" id="laporanpengeluaran" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"> Masukan Tanggal</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="<?php echo base_url('Finance/laporanpengeluaran'); ?>">
+            <div class="form-group">
+              <label for="tanggal">Tanggal Mulai</label>
+              <input type="Date" class="form-control" id="tanggal" placeholder="tanggal" name="tanggal1" required>
+            </div>
+            <div class="form-group">
+                <label for="tanggal">Tanggal Akhir</label>
+                <input type="Date" class="form-control" id="tanggal" placeholder="tanggal" name="tanggal2" >
+                <small id="emailHelp" class="form-text text-muted">Tidak Wajib</small>
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!-- Modal cashbank-->
+      <div class="modal fade" id="cashbank" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"> Masukan Bulan</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="<?php echo base_url('Finance/cashbank'); ?>">
+              <div class="form-group">
+                <label for="tanggal">Bulan</label>
+                <input type="month" id="start" class="form-control" id="tanggal" placeholder="tanggal" name="tanggal1" required>
+              </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Modal pengeluaran-->
 

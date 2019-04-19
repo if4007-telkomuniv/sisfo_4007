@@ -25,6 +25,19 @@ class M_Finance extends CI_Model {
 		$query = $this->db->get();
 		return $query->result();
 	}
-
+	public function cashbank($tanggal){
+		$this->db->select('*');
+		$this->db->from('finance');
+		$this->db->where('tanggal >=',$tanggal);
+		$this->db->order_by('tanggal', 'ASC');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	public function gaji(){
+		$this->db->select('*');
+		$this->db->from('gaji');
+		$query = $this->db->get();
+		return $query->result();
+	}
 }
 
