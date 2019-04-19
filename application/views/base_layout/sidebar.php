@@ -43,7 +43,7 @@
                 </a>
               </ul>
             </div>
-            <a href="#">
+            <a href="<?php echo base_url('finance'); ?>">
               <li>
                 <ion-icon name="stats"></ion-icon><text>Finance</text>
               </li>
