@@ -28,21 +28,28 @@ class finance extends CI_Controller {
 		$this->load->view('finance/index.php',$data);
 	}
 
-	public function Pemasukan()
+	public function inputfinance()
 	{
-		$notps = $this->input->post('blanko');
-		$suarap = $this->input->post('tanggal');
-		$suaraj = $this->input->post('keperluan');
-		$suaraj = $this->input->post('debit');
+		$tipe = $this->input->post('tipe');
+		$blanko = $this->input->post('blanko');
+		$tanggal = $this->input->post('tanggal');
+		$keperluan = $this->input->post('keperluan');
+		$debit = $this->input->post('debit');
+		$kredit = $this->input->post('kredit');
+		if ($tipe == "M1"){
+			$kredit = 0;
+		}else{
+			$debit = 0 ;
+		}
 		$data = array(
-			'tipe' => "M",
-			'blanko' => $notps,
-			'tanggal' => $suarap,
+			'tipe' => $tipe,
+			'blanko' => $blanko,
+			'tanggal' => $tanggal,
 			'keperluan' => $keperluan,
 			'debit' => $debit,
-			'kredit' => 0
+			'kredit' => $kredit
 		);
-		$this->M_Finance->Financeinput($data);
+		$this->M_Finance->financeinput($data);
 		$data = array('input' => 1);		
 		$this->load->view('finance/index.php',$data);
 	}	
