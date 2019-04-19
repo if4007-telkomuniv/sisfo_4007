@@ -27,9 +27,9 @@
                   Marketing
                 </div>
                 <!-- Subtitle opsional, tapi bila ingin diberi, jelaskan page anda dalam maks 8 kata -->
-                <!-- <div class="page-subtitle">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </div> -->
+                <div class="page-subtitle">
+                  Layanan Penjualan Produk Telkom Indonesia
+                </div>
               </div>
               <div class="row">
                 <!-- Silakan masukkan code tampilan divisi Anda di bagian ini. -->

@@ -26,7 +26,7 @@
                   </div>
                   <!-- Subtitle opsional, tapi bila ingin diberi, jelaskan page anda dalam maks 8 kata -->
                   <div class="page-subtitle">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Layanan IT Telkom Indonesia
                   </div>
                 </div>
                 <div class="row">
@@ -52,7 +52,7 @@
                         Daftar Pelanggan
                       </div>
                       <div class="box-body">
-                        Halaman yang berfungsi untuk menampilkan dan mengelola daftar pengguna yang tercatat sebagai pelanggan 
+                        Halaman yang berfungsi untuk menampilkan dan mengelola daftar pengguna yang tercatat sebagai pelanggan
                         <br><br>
                         <a href="<?= base_url() ?>its/daftar_pelanggan" class="btn btn-danger btn-sm">Kunjungi Halaman</a>
                       </div>

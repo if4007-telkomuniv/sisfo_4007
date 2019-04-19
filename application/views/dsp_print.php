@@ -32,7 +32,7 @@
                   </div>
                   <!-- Subtitle opsional, tapi bila ingin diberi, jelaskan page anda dalam maks 8 kata -->
                   <div class="page-subtitle">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Layanan Digital &amp; Strategic Portfolio Telkom Indonesia
                   </div>
                 </div>
                 <div class="row">
