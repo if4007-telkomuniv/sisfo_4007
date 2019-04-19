@@ -3,6 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dashboard extends CI_Controller {
 
+	public function __construct() {
+        parent::__construct();
+        $this->load->model('dashboard_model');
+    }
 	/**
 	 * Index Page for this controller.
 	 *
@@ -20,7 +24,18 @@ class Dashboard extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('dashboard');
-		
+		$data['sdm'] = $this->dashboard_model->getAllSdm();
+		$data['pemesanan'] = $this->dashboard_model->getPemesanan();
+		$data['tagihan'] = $this->dashboard_model->getTagihan();
+		$data['inventory'] = $this->dashboard_model->getInventory();
+		$data['status_pemasangan'] = $this->dashboard_model->getStatus();
+		$this->load->view('dashboard', $data);
+
+
 	}
+
+
+
+
+
 }
