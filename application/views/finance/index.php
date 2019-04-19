@@ -32,6 +32,13 @@
                 </div>
                 <!-- Subtitle opsional, tapi bila ingin diberi, jelaskan page anda dalam maks 8 kata -->
                 <div class="page-subtitle">
+                  <?php 
+                    if ($input == 1){
+                      <div class="alert alert-success" role="alert">
+                          Data Berhasil Di Masukan
+                      </div>
+                    }
+                  ?>
                 </div>
               </div>
               <!-- Silakan masukkan code tampilan divisi Anda di bagian ini. -->
@@ -126,7 +133,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
+          <form method="POST" action="<?php echo base_url('Finance/Pemasukan'); ?>">
             <div class="form-group">
               <label for="Blanko">Nomor Blanko</label>
               <input type="text" class="form-control" id="Blanko" aria-describedby="emailHelp"
@@ -145,7 +152,7 @@
             <div class="form-group">
               <label for="exampleInputPassword1">Pemasukan / Debit</label>
               <input type="number" class="form-control" id="exampleInputPassword1" placeholder="keperluan"
-                name="Pemasukan / Debit" name="Debit">
+                name="Pemasukan / Debit" name="debit">
             </div>
         </div>
         <div class="modal-footer">

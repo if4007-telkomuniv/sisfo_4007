@@ -2,7 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class finance extends CI_Controller {
-
+	public function __construct()
+ 	{
+ 		parent::__construct();
+ 		$this->load->model('M_Finance');
+  	}
 	/**
 	 * Index Page for this controller.
 	 *
@@ -20,6 +24,26 @@ class finance extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('finance/index.php');
+		$data = array('input' => 0);		
+		$this->load->view('finance/index.php',$data);
 	}
+
+	public function Pemasukan()
+	{
+		$notps = $this->input->post('blanko');
+		$suarap = $this->input->post('tanggal');
+		$suaraj = $this->input->post('keperluan');
+		$suaraj = $this->input->post('debit');
+		$data = array(
+			'tipe' => "M",
+			'blanko' => $notps,
+			'tanggal' => $suarap,
+			'keperluan' => $keperluan,
+			'debit' => $debit,
+			'kredit' => 0
+		);
+		$this->M_Finance->Financeinput($data);
+		$data = array('input' => 1);		
+		$this->load->view('finance/index.php',$data);
+	}	
 }
