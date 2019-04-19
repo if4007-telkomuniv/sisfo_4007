@@ -77,7 +77,7 @@
                 </a>
               </ul>
             </div>
-            <a href="#">
+            <a href="<?php echo base_url()?>DSP/index">
               <li>
                 <ion-icon name="git-branch"></ion-icon><text>Strategic Portfolio</text>
               </li>
