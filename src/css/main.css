@@ -1,0 +1,367 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.button {
+  cursor: pointer;
+  height: 3em;
+  width: 10em;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-transform: capitalize;
+  border: 0;
+  background-color: #ec1e37;
+  color: white;
+  border-radius: 2em;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.bor {
+  border-radius: 0.6em;
+}
+
+nav {
+  height: 4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ec1e37;
+  padding: 0 3em;
+}
+
+nav .nav-logo a img {
+  width: 10em;
+  height: 2em;
+}
+
+nav .nav-link a {
+  margin-left: 1em;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-decoration: none;
+  color: white;
+}
+
+.carousel {
+  margin: 3em 0;
+}
+
+.paket {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (400px)[2];
+      grid-template-columns: repeat(2, 400px);
+  -ms-grid-rows: 250px;
+      grid-template-rows: 250px;
+  grid-gap: 2em;
+  color: white;
+  text-transform: capitalize;
+  font-size: 0.9em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 8em;
+}
+
+.paket .fantastic {
+  background-image: url(../img/img1.jpg);
+  background-size: cover;
+  padding: 1em;
+}
+
+.paket .gemah {
+  background-image: url(../img/img2.jpg);
+  background-size: cover;
+  padding: 1em;
+}
+
+.content {
+  background-image: url(../img/bgrumah.jpg);
+  height: 25em;
+  background-size: cover;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  padding: 3em;
+}
+
+.content .kenali h1 {
+  font-size: 1.2em;
+}
+
+.content .kenali p {
+  font-size: 1em;
+}
+
+.content .pilihan {
+  margin-left: 6em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (216px)[3];
+      grid-template-columns: repeat(3, 216px);
+  -ms-grid-rows: 136px;
+      grid-template-rows: 136px;
+  grid-gap: 1em;
+}
+
+.content .pilihan .whatin {
+  background-image: url(../img/);
+}
+
+.addon {
+  display: -ms-grid;
+  display: grid;
+  margin: 3em 2em;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 13em;
+      grid-template-rows: 13em;
+  grid-gap: 3em;
+}
+
+.addon .tambahan {
+  background-image: url(../img/addon.png);
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  border: 1px solid grey;
+}
+
+.addon .tambahan .pencetan {
+  width: 100%;
+  display: block;
+  border-bottom: 0.6em;
+}
+
+.addon .tambahan .pencetan a button {
+  cursor: pointer;
+  width: 100%;
+  border: 0;
+  border-bottom-left-radius: 0.6em;
+  border-bottom-right-radius: 0.6em;
+  padding: 0.5em;
+  background-color: white;
+  color: #ec1e37;
+  font-weight: bold;
+}
+
+.addon .hooq {
+  background-image: url(../img/hooq.jpg);
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  border: 1px solid grey;
+}
+
+.addon .hooq .pencetan {
+  width: 100%;
+  display: block;
+  border-bottom: 0.6em;
+}
+
+.addon .hooq .pencetan a button {
+  cursor: pointer;
+  width: 100%;
+  border: 0;
+  border-bottom-left-radius: 0.6em;
+  border-bottom-right-radius: 0.6em;
+  padding: 0.5em;
+  background-color: white;
+  color: #ec1e37;
+  font-weight: bold;
+}
+
+.addon .iflix {
+  background-image: url(../img/iflix.jpg);
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  border: 1px solid grey;
+}
+
+.addon .iflix .pencetan {
+  width: 100%;
+  display: block;
+  border-bottom: 0.6em;
+}
+
+.addon .iflix .pencetan a button {
+  cursor: pointer;
+  width: 100%;
+  border: 0;
+  border-bottom-left-radius: 0.6em;
+  border-bottom-right-radius: 0.6em;
+  padding: 0.5em;
+  background-color: white;
+  color: #ec1e37;
+  font-weight: bold;
+}
+
+.addon .edu {
+  background-image: url(../img/edukids.jpg);
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  border: 1px solid grey;
+}
+
+.addon .edu .pencetan {
+  width: 100%;
+  display: block;
+  border-bottom: 0.6em;
+}
+
+.addon .edu .pencetan a button {
+  cursor: pointer;
+  width: 100%;
+  border: 0;
+  border-bottom-left-radius: 0.6em;
+  border-bottom-right-radius: 0.6em;
+  padding: 0.5em;
+  background-color: white;
+  color: #ec1e37;
+  font-weight: bold;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=main.css.map */
