@@ -14,50 +14,6 @@
                 <ion-icon name="home"></ion-icon><text>Dashboard</text>
               </li>
             </a>
-            <a href="#coo" data-toggle="collapse">
-              <li>
-                <ion-icon name="business"></ion-icon><text>Business Service</text>
-              </li>
-            </a>
-            <div id="coo" class="collapse tree-dropdown">
-							<ul>
-								<a href="<?= base_url() ?>MenuDivisi/komplain">
-									<li>
-										<text>CSM Non-Marketing</text>
-									</li>
-								</a>
-								<a href="<?= base_url() ?>MenuDivisi/marketing">
-									<li>
-										<text>CS Marketing</text>
-									</li>
-								</a>
-								<a href="<?= base_url() ?>MenuDivisi/absensi">
-									<li>
-										<text>Human Resource</text>
-									</li>
-								</a>
-								<a href="<?= base_url() ?>MenuDivisi/komplain_network">
-									<li>
-										<text>IT Support</text>
-									</li>
-								</a>
-								<a href="<?= base_url() ?>MenuDivisi/skp">
-									<li>
-										</ion-icon><text>Strategic Portfolio</text>
-									</li>
-								</a>
-								<a href="<?= base_url() ?>MenuDivisi/history_out">
-									<li>
-										<text>Wholesale</text>
-									</li>
-								</a>
-                <a href="<?= base_url() ?>MenuDivisi/finance">
-									<li>
-										<text>Finance</text>
-									</li>
-								</a>
-							</ul>
-						</div>
             <a href="<?= base_url() ?>its">
               <li>
                 <ion-icon name="git-network"></ion-icon><text>IT Support</text>
