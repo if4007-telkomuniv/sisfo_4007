@@ -28,7 +28,7 @@ class Csmarketing extends CI_Controller {
       $data['banner'] = $this->CSMarketing_model->getBanner();
   		$data['article'] = $this->CSMarketing_model->getArticle();
   		$data['about'] = $this->CSMarketing_model->getAbout();
-  		$this->load->view('cms-marketing',$data);
+  		$this->load->view('marketing/cms-marketing',$data);
     }
 
     public function editBanner($id){
