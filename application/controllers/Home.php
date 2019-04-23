@@ -28,6 +28,8 @@ class Home extends CI_Controller {
 		$data['banner'] = $this->home_model->getBanner();
 		$data['article'] = $this->home_model->getArticle();
 		$data['about'] = $this->home_model->getAbout();
+		$this->load->view('navbar_main');
 		$this->load->view('home', $data);
+		$this->load->view('footer_main');
 	}
 }
