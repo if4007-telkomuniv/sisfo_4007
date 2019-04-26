@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2019 at 05:30 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.8
+-- Generation Time: Apr 26, 2019 at 09:55 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,13 +25,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `historyinventoryin`
+--
+
+CREATE TABLE `historyinventoryin` (
+  `idBarang` varchar(9) NOT NULL,
+  `stockBarang` int(11) NOT NULL,
+  `keterangan` varchar(100) NOT NULL,
+  `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `historyinventoryout`
 --
 
 CREATE TABLE `historyinventoryout` (
   `idBarang` varchar(9) NOT NULL,
   `stockBarang` int(11) NOT NULL,
-  `keterangan` varchar(100) NOT NULL
+  `keterangan` varchar(100) NOT NULL,
+  `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -45,18 +59,9 @@ CREATE TABLE `inventory` (
   `namaBarang` varchar(50) NOT NULL,
   `stockBarang` int(11) NOT NULL,
   `idSupplier` varchar(9) NOT NULL,
-  `keterangan` varchar(100) NOT NULL
+  `keterangan` varchar(100) NOT NULL,
+  `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `inventory`
---
-
-INSERT INTO `inventory` (`idBarang`, `namaBarang`, `stockBarang`, `idSupplier`, `keterangan`) VALUES
-('1', 'asd', 0, 'asd', ''),
-('2', '123', 123123, '123', ''),
-('3', 'asdsadsads', 2147483647, 'SB0001', ''),
-('4', 'asd12321', 22, 'SB0001', '');
 
 -- --------------------------------------------------------
 
@@ -93,16 +98,20 @@ CREATE TABLE `supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `supplier`
---
-
-INSERT INTO `supplier` (`idSupplier`, `namaSupplier`, `deskripsi`, `idKategori`, `status`) VALUES
-('SB0001', 'tes', 'tes', 'tes', 0),
-('SP0002', 'Redy', 'test', 'KT0000001', 1);
-
---
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `historyinventoryin`
+--
+ALTER TABLE `historyinventoryin`
+  ADD PRIMARY KEY (`idBarang`);
+
+--
+-- Indexes for table `historyinventoryout`
+--
+ALTER TABLE `historyinventoryout`
+  ADD PRIMARY KEY (`idBarang`);
 
 --
 -- Indexes for table `inventory`
@@ -120,7 +129,18 @@ ALTER TABLE `kategori`
 -- Indexes for table `supplier`
 --
 ALTER TABLE `supplier`
-  ADD PRIMARY KEY (`idSupplier`);
+  ADD PRIMARY KEY (`idSupplier`),
+  ADD KEY `idKategori` (`idKategori`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `supplier`
+--
+ALTER TABLE `supplier`
+  ADD CONSTRAINT `supplier_ibfk_1` FOREIGN KEY (`idKategori`) REFERENCES `kategori` (`idKategori`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

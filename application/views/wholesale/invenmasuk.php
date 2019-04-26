@@ -59,7 +59,7 @@
                           </div>
                           <div class="form-group">
                             <label for="stockBarang">Stock Barang:</label>
-                            <input type="number" class="form-control" id="stockBarang" placeholder="Banyak barang" name="stockBarang" required>
+                            <input type="number" class="form-control" id="stockBarang" placeholder="Banyak barang" name="stockBarang" min=1 required>
                             <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Harap diisi.</div>
                           </div>
