@@ -54,7 +54,7 @@
                       <tbody>
                       <?php
                         $i = 1;
-                        foreach($komplain->result() as $k){
+                        foreach($komplain as $k){
                       ?>
                         <tr>
                           <th scope="row"><?= $k->id_komplain ?></th>

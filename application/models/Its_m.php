@@ -12,17 +12,22 @@ class Its_m extends CI_Model {
 	}
 
 	public function getPelanggan(){
-		$this->db->order_by('nama','asc');
-		return $this->db->get('pelanggan');
+		return json_decode(
+    file_get_contents(API_BASE_URL."itsupport/index_get?param=get_pelanggan"));
+		// return $this->db->get('pelanggan');
 	}
 
 	public function getStatusPemasangan(){
-		$this->db->join('pelanggan', 'status_pemasangan.id_pelanggan = pelanggan.id_pelanggan');
-		return $this->db->get('status_pemasangan');
+		return json_decode(
+    file_get_contents(API_BASE_URL."itsupport/index_get?param=get_status"));
+		// $this->db->join('pelanggan', 'status_pemasangan.id_pelanggan = pelanggan.id_pelanggan');
+		// return $this->db->get('status_pemasangan');
 	}
 
 	public function getKomplain(){
-		return $this->db->get('komplain');
+		return json_decode(
+    file_get_contents(API_BASE_URL."itsupport/index_get?param=get_komplain"));
+		// return $this->db->get('komplain');
 	}
 
 	public function editKomplain($data, $id){
@@ -57,9 +62,9 @@ class Its_m extends CI_Model {
 		return $this->db->insert('status_pemasangan', $data);
 	}
 
-	public function check_pelanggan($id){ 
+	public function check_pelanggan($id){
 		$this->db->where('id_pelanggan', $id);
-		return $this->db->count_all_results('pelanggan');	
+		return $this->db->count_all_results('pelanggan');
 	}
 
 }
