@@ -27,15 +27,15 @@
                   Marketing
                 </div>
                 <!-- Subtitle opsional, tapi bila ingin diberi, jelaskan page anda dalam maks 8 kata -->
-                <!-- <div class="page-subtitle">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </div> -->
+                <div class="page-subtitle">
+                  Layanan Penjualan Produk Telkom Indonesia
+                </div>
               </div>
-              <div class="row">
+              <div class="row d-flex flex-md-row flex-sm-column">
                 <!-- Silakan masukkan code tampilan divisi Anda di bagian ini. -->
 
                 <!-- Dibawah ini adalah template box yang kalian bisa pakai untuk pengembangan sistem -->
-                <div class="col-8">
+                <div class="col-md-8 col-sm-12 order-2">
                   <div class="box d-none" id='articleForm'>
                     <div class="box-header">
                       Add Article
@@ -50,7 +50,7 @@
                           <label for="exampleFormControlTextarea1">Keterangan</label>
                           <textarea name='isi' class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
-                        <button type="submit" name="submit" class="btn btn-primary">Add</button>
+                        <button type="submit" name="submit" class="btn btn-danger">Add</button>
                       </form>
                     </div>
                     <?php foreach($article as $ar){
@@ -67,7 +67,7 @@
                                     <label for="exampleFormControlTextarea1">Keterangan</label>
                                     <textarea name="isi" class="form-control" id="exampleFormControlTextarea1" rows="3">'.$ar['isi'].'</textarea>
                                   </div>
-                                  <button type="submit" name="submit" class="btn btn-primary">Edit</button>
+                                  <button type="submit" name="submit" class="btn btn-danger">Edit</button>
                                   <a href="'.base_url().'csmarketing/hapusArticle/'.$ar["id"].'" class="btn btn-danger">Delete</a>
                                 </form>
                               </div>';
@@ -88,7 +88,7 @@
                           <label for="exampleFormControlTextarea1">Keterangan</label>
                           <textarea name='ket' class="form-control" id="exampleFormControlTextarea1" rows="3"><?= $b['keterangan']?></textarea>
                         </div>
-                        <button type="submit" name="submit" class="btn btn-primary">Edit</button>
+                        <button type="submit" name="submit" class="btn btn-danger">Edit</button>
                       </form>
                     </div>
                   </div>
@@ -108,21 +108,21 @@
                           <label for="exampleFormControlTextarea1">Keterangan</label>
                           <textarea name='isi' class="form-control" id="exampleFormControlTextarea1" rows="3"><?= $a['isi']?></textarea>
                         </div>
-                        <button type="submit" name="submit" class="btn btn-primary">Edit</button>
+                        <button type="submit" name="submit" class="btn btn-danger">Edit</button>
                       </form>
                     </div>
                   </div>
                   <?php }?>
                 </div>
-                <div class="col-4">
+                <div class="col-md-4 col-sm-12 order-1 mb-sm-2 mb-xs-2">
                   <div class="box">
                     <div class="box-header">
                       Select
                     </div>
-                    <div class="box-body">
-                      <button class='btn btn-primary' id='banner'>Banner</button>
-                      <button class='btn btn-primary' id='about'>About</button>
-                      <button class='btn btn-primary' id='article'>Article</button>
+                    <div class="box-body d-flex justify-content-between flex-wrap">
+                      <button class='btn btn-danger mt-2 mw-25' id='banner'>Banner</button>
+                      <button class='btn btn-danger mt-2 mw-25' id='about'>About</button>
+                      <button class='btn btn-danger mt-2 mw-25' id='article'>Article</button>
                     </div>
                   </div>
                 </div>

@@ -14,11 +14,6 @@
                 <ion-icon name="home"></ion-icon><text>Dashboard</text>
               </li>
             </a>
-            <a href="#">
-              <li>
-                <ion-icon name="business"></ion-icon><text>Business Service</text>
-              </li>
-            </a>
             <a href="<?= base_url() ?>its">
               <li>
                 <ion-icon name="git-network"></ion-icon><text>IT Support</text>
@@ -31,7 +26,7 @@
             </a>
             <div id="csm_service" class="collapse tree-dropdown">
               <ul>
-                <a href="#">
+                <a href="<?= base_url()?>nonmarket/komplain">
                   <li>
                     <text>CSM Non-Marketing</text>
                   </li>
@@ -43,7 +38,7 @@
                 </a>
               </ul>
             </div>
-            <a href="#">
+            <a href="<?php echo base_url('finance'); ?>">
               <li>
                 <ion-icon name="stats"></ion-icon><text>Finance</text>
               </li>
@@ -77,7 +72,7 @@
                 </a>
               </ul>
             </div>
-            <a href="#">
+            <a href="<?php echo base_url()?>DSP/index">
               <li>
                 <ion-icon name="git-branch"></ion-icon><text>Strategic Portfolio</text>
               </li>

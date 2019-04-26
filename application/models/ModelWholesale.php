@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ModelWholesale extends CI_Model{  
+class ModelWholesale extends CI_Model{
     public function getSupplier(){
         return $this->db->get('supplier');
     }
@@ -93,7 +93,7 @@ class ModelWholesale extends CI_Model{
         $this->db->join('supplier','idSupplier');
         return $this->db->get();
     }
-
+    
     public function updateBarang($data){
         return $this->db->replace('inventory', $data);
     }
@@ -109,4 +109,5 @@ class ModelWholesale extends CI_Model{
         $this->db->from('historyinventoryin');
         return $this->db->get();
     }
+}
 }

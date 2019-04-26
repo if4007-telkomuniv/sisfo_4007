@@ -99,17 +99,17 @@
                       <tbody>
                       <?php
                         $i = 1;
-                        foreach($status_pemasangan->result() as $sp){
+                        foreach($status_pemasangan as $sp){
                       ?>
                         <tr>
                           <th scope="row"><?= $sp->id_sp ?></th>
                           <td>
-                            <?php 
+                            <?php
                             if($sp->status_pemasangan == 'Terpasang'){
                             ?>
                             <span class="badge badge-pill badge-primary"><?= $sp->status_pemasangan ?></span>
                             <?php
-                            } 
+                            }
                             else if($sp->status_pemasangan == 'Menunggu Stok Modem'){
                             ?>
                             <span class="badge badge-pill badge-warning"><?= $sp->status_pemasangan ?></span>
@@ -210,7 +210,7 @@
 
                           </td>
                         </tr>
-                        <?php } ?> 
+                        <?php } ?>
                       </tbody>
                     </table>
                   </div>

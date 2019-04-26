@@ -25,5 +25,5 @@ class Template extends CI_Controller {
 	public function it_support(){
 		$this->load->view('it_support');
 	}
-	
+
 }

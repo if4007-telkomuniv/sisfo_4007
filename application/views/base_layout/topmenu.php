@@ -11,15 +11,15 @@
       <div class="top-menu">
         <div class="bar force-right">
           <a href="#popup_toggle" data-toggle="custom_popup">
-            <div class="profile-picture"></div>
+            <div class="profile-picture" style="background-image: url('https://assets.vg247.com/current//2018/05/fortnite_thanos_avengers_infinity_war_event_square_header_1.jpg')"></div>
           </a>
         </div>
         <div class="bar force-right">
           <div id="popup_toggle" class="collapse profile-popup">
             <div class="profile-popup-body">
-              <div class="picture"></div>
+              <div class="picture" style="background-image: url('https://assets.vg247.com/current//2018/05/fortnite_thanos_avengers_infinity_war_event_square_header_1.jpg')"></div>
               <div class="name">
-                Lorem ipsum dolor
+                Thanos Wijaya
               </div>
               <a href="<?php echo base_url()."logout"?>">
                 <div class="logout">

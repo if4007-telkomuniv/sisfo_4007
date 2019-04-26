@@ -104,12 +104,12 @@
                       <tbody>
                       <?php
                         $i = 1;
-                        foreach($pelanggan->result() as $p){
+                        foreach($pelanggan as $p){
                       ?>
                         <tr>
                           <th scope="row"><?= $p->id_pelanggan ?></th>
                           <td>
-                            <?php 
+                            <?php
                             if($p->status == 'Aktif'){
                             ?>
                             <span class="badge badge-pill badge-success"><?= $p->status ?></span>

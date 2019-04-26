@@ -135,9 +135,9 @@ nav{
     // background-color: #e0eaf5;
     height: 15em;
     display: grid;
-    grid-template-columns: repeat(6, auto);
+    grid-template-columns: repeat(4, auto);
     grid-template-rows: auto;
-    grid-column-gap: 0.5em;
+    grid-column-gap: 1.5em;
     justify-content: center;
     align-items: center;
 }
