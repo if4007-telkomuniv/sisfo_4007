@@ -115,6 +115,9 @@ nav .sidebar .menu ul li text {
   width: 40px;
   border-radius: 50%;
   background: #dfdfdf;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .top-menu .bar.force-right .profile-popup {
@@ -145,6 +148,9 @@ nav .sidebar .menu ul li text {
   width: 80px;
   background-color: #dfdfdf;
   margin: 15px auto;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .top-menu .bar.force-right .profile-popup-body .text {
   margin-top: 25px;
