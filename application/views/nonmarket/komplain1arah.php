@@ -47,13 +47,13 @@
 											</tr>
 										</thead>
 										<tbody>
-											<?php foreach ($komplain_nonmarket as $kmpl) : ?>
+											<?php foreach ($komplain as $kmpl) : ?>
 											<tr>
-												<td><?= $kmpl['nama']; ?></td>
-												<td><?= $kmpl['no_telp']; ?></td>
-												<td><?= $kmpl['alamat']; ?></td>
-												<td><?= $kmpl['paket']; ?></td>
-												<td><?= $kmpl['komplain']; ?></td>
+												<td><?= $kmpl->nama ?></td>
+												<td><?= $kmpl->telepon; ?></td>
+												<td><?= $kmpl->alamat; ?></td>
+												<td><?= $kmpl->paket; ?></td>
+												<td><?= $kmpl->komplain; ?></td>
 											</tr>
 											<?php endforeach; ?>
 										</tbody>

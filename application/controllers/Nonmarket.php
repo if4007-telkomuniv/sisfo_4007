@@ -9,7 +9,7 @@ class Nonmarket extends CI_Controller {
     }
 
     public function komplain(){
-        $data['komplain_nonmarket'] = $this->nonmarket_model->getAllKomplain();
+        $data['komplain'] = $this->nonmarket_model->getAllKomplain();
         $this->load->view('nonmarket/komplain1arah',$data);
   	}
 
