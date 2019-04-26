@@ -15,8 +15,8 @@
         </div>
         <div class="nav-link">
             <a href="<?= base_url("home")?>">Home</a>
-            <a href="">Promo</a>
-            <a href="">Pusat Bantuan</a>
+            <a href="<?= base_url("home/pemesanan_nonmarket")?>">Promo</a>
+            <a href="<?= base_url("Home/komplain_nonMarket")?>">Pusat Bantuan</a>
         </div>
     </nav>
 </body>
