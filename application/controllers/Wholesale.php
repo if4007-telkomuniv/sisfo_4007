@@ -136,6 +136,7 @@ class Wholesale extends CI_Controller {
 
 
 	public function addSupplier() {
+		# Add supplier
 		if(null !== $this->input->post('namaSupplier')){
 			$no = (int)$this->ModelWholesale->getLenSupplier() + 1;
 			$idSupplier = "SP000" .  $no;
@@ -156,6 +157,7 @@ class Wholesale extends CI_Controller {
 			$data['edit'] = null;
 			$data['success'] = 1;
 
+		# Update supplier
 		}elseif(null != $this->input->post('namaSupplierEdit')){
 			$idSupplier = $this->input->post('idSupplierEdit');
 			$namaSupplier = $this->input->post('namaSupplierEdit');
@@ -173,6 +175,7 @@ class Wholesale extends CI_Controller {
 			$data['edit'] = 1;
 			$data['success'] = null;
 			$this->ModelWholesale->updateSupplier($dataUser);
+			
 		}elseif(null != $this->input->post('delete')){
 			$idSupplier = $this->input->post('delete');
 			$namaSupplier = $this->input->post('namaSupplierDelete');
