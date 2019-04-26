@@ -84,6 +84,14 @@ class finance extends CI_Controller {
 		$data['gaji'] = $this->M_Finance->gaji();
 		$this->load->view('finance/cashbank.php',$data);
 	}
+	
+	public function tahunan()
+	{
+		$tanggal1 = $this->input->post('tanggal1');
+		$data['cashbank'] = $this->M_Finance->tahunan($tanggal1);
+		$data['gaji'] = $this->M_Finance->gaji();
+		$this->load->view('finance/laporantahunan.php',$data);
+	}
 
 	
 }
