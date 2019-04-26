@@ -29,14 +29,11 @@
                             <div class="page-header">
                                 <!-- Silakan replace sesuai judul halaman divisi kalian -->
                                 <div class="page-title">
-                                    Laporan Tahunan
+                                    CashBank
                                 </div>
                                 <!-- Subtitle opsional, tapi bila ingin diberi, jelaskan page anda dalam maks 8 kata -->
                                 <div class="page-subtitle">
                                 </div>
-                            </div>
-                            <div class="col-12">
-                                
                             </div>
                             <!-- Silakan masukkan code tampilan divisi Anda di bagian ini. -->
                             <!-- Dibawah ini adalah template box yang kalian bisa pakai untuk pengembangan sistem -->
@@ -45,30 +42,55 @@
                                 <table id="table_id" class="display" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Blanko</th>
-                                            <th>Keperluan</th>
-                                            <th>Tanggal</th>
-                                            <th>Kredit</th>
+                                            <th>Keterangan</th>
+                                            <th>January</th>
+                                            <th>Febuary</th>
+                                            <th>Maret</th>
+                                            <th>April</th>
+                                            <th>Mei</th>
+                                            <th>Juni</th>
+                                            <th>July</th>
+                                            <th>Agustus</th>
+                                            <th>September</th>
+                                            <th>Oktober</th>
+                                            <th>November</th>
+                                            <th>Desember</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                        $a = 0;
-                                        foreach ($pemasukan as $row) { ?>
-                                            <tr>
-                                                <td><?php echo $row->blanko; ?></td>
-                                                <td><?php echo $row->keperluan; ?></td>
-                                                <td><?php echo $row->tanggal; ?></td>
-                                                <td>Rp. <?php echo number_format($row->kredit,2); ?></td>
-                                                <?php $a = $a + $row->kredit; ?>
-                                            </tr>
-                                        <?php }
-                                        ?>
                                         <tr>
-                                            <th colspan="3">Total</th>
-                                            <td style="display: none;"></td>
-                                            <td style="display: none;"></td>
-                                            <th>Rp. <?php echo number_format($a,2); ?></th>
+                                            <td>Debit</td>
+                                            <?php
+                                            $bln = 1;
+                                            while ($bln <= 12) {
+                                                $a = 0;
+                                                $b = 0;
+                                                foreach ($cashbank as $row) {
+                                                    $tgl = intval(date("m", strtotime($row->tanggal)));
+                                                    if ($tgl == $bln) {
+                                                        $a = $row->debit + $a;
+                                                    }
+                                                }?>
+                                                <td><?php echo $a ?></td>
+                                                <?php $bln = $bln + 1;
+                                            } ?>
+                                        </tr>
+                                        <tr>
+                                            <td>Kredit</td>
+                                            <?php
+                                            $bln = 1;
+                                            while ($bln <= 12) {
+                                                $a = 0;
+                                                $b = 0;
+                                                foreach ($cashbank as $row) {
+                                                    if (intval(date("m", strtotime($row->tanggal))) == $bln) {
+                                                        $a = $row->kredit;
+                                                    }
+                                                }?>
+                                                    <td><?php echo $a ?></td>
+
+                                                    <?php $bln = $bln + 1;
+                                            } ?>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -82,7 +104,8 @@
     <?php $this->load->view('base_layout/js_mandatory') ?>
     <script>
         $(document).ready(function() {
-            $('#table_id').DataTable();
+            $('#table_id').DataTable({
+            });
         });
     </script>
 </body>
