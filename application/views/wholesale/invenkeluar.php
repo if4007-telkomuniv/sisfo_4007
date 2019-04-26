@@ -57,7 +57,7 @@
                             ?>
                             <tr class="odd gradeX">
                               <td> <?php echo $row->idBarang; ?> </td>
-                              <td> <?php echo $row->stockBarang; ?> </td>
+                              <td style="color: red;font-weight: bold;">-<?php echo $row->stockBarang; ?> </td>
                               <td> <?php echo $row->keterangan; ?> </td>
                               <td> <?php echo $row->tanggal; ?> </td>
                             </tr>

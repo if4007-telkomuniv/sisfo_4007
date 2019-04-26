@@ -24,7 +24,7 @@ class Wholesale extends CI_Controller {
 	public function index()
 	{
 		$data['result'] = $this->ModelWholesale->getStock();
-		$this->load->view('wholesale/stockOf_Items');
+		$this->load->view('wholesale/stockOfItems_view',$data);
 	}
 
 
@@ -36,6 +36,8 @@ class Wholesale extends CI_Controller {
 		}else {
 			$data['success'] = 0;
 		}
+		$data['barang'] = $this->ModelWholesale->getIdBarang();
+		$data['history'] = $this->ModelWholesale->getHistoryIn();
 		$data['supplier'] = $this->ModelWholesale->getSupplier();
 		$this->load->view('wholesale/invenmasuk',$data);
 	}
@@ -45,7 +47,7 @@ class Wholesale extends CI_Controller {
 		$flag = 0;
 		foreach ($this->ModelWholesale->getIdBarang()->result() as $v){
 			if ($v->idSupplier == $this->input->post('idSupplier') && $v->namaBarang == $this->input->post('namaBarang')){
-				$idSupplier = $v->idSupplier;
+				$idBarang = $v->idBarang;
 				$namaBarang = $v->namaBarang;
 				$currentStock = $v->stockBarang;
 				$flag = 1;
@@ -53,11 +55,14 @@ class Wholesale extends CI_Controller {
 			}
 		}
 		if ($flag == 1){
+			$data['idBarang'] = $idBarang;
 			$data['namaBarang'] = $namaBarang;
 			$data['stockBarang'] = $currentStock + $this->input->post('stockBarang');
+			$data['minstockBarang'] = $this->input->post('stockBarang');
 			$data['keterangan'] = $this->input->post('keterangan');
 
 			$this->ModelWholesale->updateInventoryOut($data);
+			$this->ModelWholesale->addHistoryInventoryIn('historyinventoryin',$data);
 			redirect(base_url('wholesale/invenmasuk?q=success'), 'refresh');
 		}else{
 			$id =  $this->ModelWholesale->getIdBarang()->num_rows()+1;
@@ -68,6 +73,7 @@ class Wholesale extends CI_Controller {
 			$data['keterangan'] = $this->input->post('keterangan');
 
 			$this->ModelWholesale->addInventory($data);
+			$this->ModelWholesale->addHistoryInventoryIn('historyinventoryin',$data);
 		}
 	}
 	// ---END FUNCTION FOR INVENTORY IN--- //
@@ -76,7 +82,7 @@ class Wholesale extends CI_Controller {
 	public function invenkeluar()
 	{
 		$data['barang'] = $this->ModelWholesale->getIdBarang();
-		$data['history'] = $this->ModelWholesale->getHistory();
+		$data['history'] = $this->ModelWholesale->getHistoryOut();
 		$this->load->view('wholesale/invenkeluar', $data);
 	}
 

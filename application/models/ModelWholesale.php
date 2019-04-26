@@ -41,7 +41,16 @@ class ModelWholesale extends CI_Model{
             'stockBarang' => $data['minstockBarang'],
             'keterangan' => $data['keterangan']
         );
-		$this->db->insert('historyinventoryout', $dataInsert);
+		$this->db->insert('HistoryInventoryOut', $dataInsert);
+    }
+
+    public function addHistoryInventoryIn($table, $data){
+        $dataInsert = array(
+            'idBarang' => $data['idBarang'],
+            'stockBarang' => $data['minstockBarang'],
+            'keterangan' => $data['keterangan']
+        );
+        $this->db->insert($table, $dataInsert);
     }
 
     public function getLenSupplier(){
@@ -89,9 +98,15 @@ class ModelWholesale extends CI_Model{
         return $this->db->replace('inventory', $data);
     }
 
-    public function getHistory(){
+    public function getHistoryOut(){
         $this->db->select('*');
         $this->db->from('historyinventoryout');
+        return $this->db->get();
+    }
+
+    public function getHistoryIn(){
+        $this->db->select('*');
+        $this->db->from('historyinventoryin');
         return $this->db->get();
     }
 }
