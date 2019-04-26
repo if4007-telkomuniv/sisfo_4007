@@ -43,13 +43,13 @@
 										<tbody>
 											<?php foreach ($pemesanan as $pmsn) : ?>
 											<tr>
-												<td><?= $pmsn->id_pemesanan; ?></td>
-												<td><?= $pmsn->nama; ?></td>
-												<td><?= $pmsn->no_identitas; ?></td>
-												<td><?= $pmsn->email; ?></td>
-												<td><?= $pmsn->no_telp; ?></td>
-												<td><?= $pmsn->paket; ?></td>
-												<td><?= $pmsn->alamat; ?></td>
+												<td><?= $pmsn['id_pemesanan']; ?></td>
+												<td><?= $pmsn['nama']; ?></td>
+												<td><?= $pmsn['no_identitas']; ?></td>
+												<td><?= $pmsn['email']; ?></td>
+												<td><?= $pmsn['no_telp']; ?></td>
+												<td><?= $pmsn['paket']; ?></td>
+												<td><?= $pmsn['alamat']; ?></td>
 											</tr>
 											<?php endforeach; ?>
 										</tbody>
@@ -87,11 +87,9 @@
 				lengthChange: false,
 				buttons: ['pdf']
 			});
-
 			table.buttons().container()
 				.appendTo('#table_id_wrapper .col-md-6:eq(0)');
 		});
-
 	</script>
 </body>
 

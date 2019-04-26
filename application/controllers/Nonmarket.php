@@ -1,27 +1,21 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Nonmarket extends CI_Controller {
-
     public function __construct() {
         parent::__construct();
         $this->load->model('nonmarket_model');
     }
-
     public function komplain(){
-        $data['komplain'] = $this->nonmarket_model->getAllKomplain();
+        $data['komplain_nonmarket'] = $this->nonmarket_model->getAllKomplain();
         $this->load->view('nonmarket/komplain1arah',$data);
   	}
-
     public function pemesanan(){
         $data2['pemesanan'] = $this->nonmarket_model->getAllPemesanan();
         $this->load->view('nonmarket/pemesanan',$data2);
     }
-
     public function dashboard(){
         $this->load->view('dashboard');
     }
-
     public function tambah(){
         $this->form_validation->set_rules('nama','Nama','required');
         $this->form_validation->set_rules('no_telp','No_Telp','required');
@@ -33,7 +27,6 @@ class Nonmarket extends CI_Controller {
             redirect('nonmarket/komplain');
         }
     }
-
     public function tambah_pemesanan(){
         $this->form_validation->set_rules('nama','Nama','required');
         $this->form_validation->set_rules('no_identitas','No_Identitas','required');
@@ -47,7 +40,6 @@ class Nonmarket extends CI_Controller {
           redirect('nonmarket/pemesanan');
         }
 	}
-
 
 
 }

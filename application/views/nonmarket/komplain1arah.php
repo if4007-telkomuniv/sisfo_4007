@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -47,13 +48,13 @@
 											</tr>
 										</thead>
 										<tbody>
-											<?php foreach ($komplain as $kmpl) : ?>
+											<?php foreach ($komplain_nonmarket as $kmpl) : ?>
 											<tr>
-												<td><?= $kmpl->nama ?></td>
-												<td><?= $kmpl->telepon; ?></td>
-												<td><?= $kmpl->alamat; ?></td>
-												<td><?= $kmpl->paket; ?></td>
-												<td><?= $kmpl->komplain; ?></td>
+												<td><?= $kmpl['nama']; ?></td>
+												<td><?= $kmpl['no_telp']; ?></td>
+												<td><?= $kmpl['alamat']; ?></td>
+												<td><?= $kmpl['paket']; ?></td>
+												<td><?= $kmpl['komplain']; ?></td>
 											</tr>
 											<?php endforeach; ?>
 										</tbody>
@@ -92,11 +93,9 @@
 				lengthChange: false,
 				buttons: ['pdf']
 			});
-
 			table.buttons().container()
 				.appendTo('#table_id_wrapper .col-md-6:eq(0)');
 		});
-
 	</script>
 </body>
 
