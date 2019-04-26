@@ -19,20 +19,20 @@
     </div>
 
     <div class="product">
-        <a href=""><img src="src/img/singleplay.png" alt=""></a>
-        <a href=""><img src="src/img/dualplay.png" alt=""></a>
-        <a href=""><img src="src/img/tripleplay.png" alt=""></a>
-        <a href=""><img src="src/img/bantuan.png" alt=""></a>
+        <a href="<?= base_url(); ?>Home/pemesanan_nonmarket?>"><img src="src/img/singleplay.png" alt=""></a>
+        <a href="<?= base_url(); ?>Home/pemesanan_nonmarket?>"><img src="src/img/dualplay.png" alt=""></a>
+        <a href="<?= base_url(); ?>Home/pemesanan_nonmarket?>"><img src="src/img/tripleplay.png" alt=""></a>
+        <a href="<?= base_url(); ?>Home/komplain_nonMarket?>"><img src="src/img/bantuan.png" alt=""></a>
     </div>
 
     <div class="paket">
         <div class="fantastic border-round">
             <h1>berlangganan paket fantastic deal</h1>
-            <button class="button">lihat detail</button>
+            <a href="Home/pemesanan_nonmarket"><button class="button">lihat detail</button></a>
         </div>
         <div class="gemah border-round">
             <h1>berlangganan indihome paket gamer</h1>
-            <button class="button">lihat detail</button>
+            <a href="Home/pemesanan_nonmarket"><button class="button">lihat detail</button></a>
         </div>
     </div>
 

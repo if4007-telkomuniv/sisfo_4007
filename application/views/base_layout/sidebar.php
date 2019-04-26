@@ -26,7 +26,7 @@
             </a>
             <div id="csm_service" class="collapse tree-dropdown">
               <ul>
-                <a href="#">
+                <a href="<?= base_url()?>nonmarket/komplain">
                   <li>
                     <text>CSM Non-Marketing</text>
                   </li>
