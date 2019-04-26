@@ -157,11 +157,11 @@ nav .nav-link a {
   height: 15em;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (auto)[6];
-      grid-template-columns: repeat(6, auto);
+  -ms-grid-columns: (auto)[4];
+      grid-template-columns: repeat(4, auto);
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-  grid-column-gap: 0.5em;
+  grid-column-gap: 1.5em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
