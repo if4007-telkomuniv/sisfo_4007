@@ -1,7 +1,7 @@
 <?php
 
 
-class nonmarket_model extends CI_Model{
+class Nonmarket_model extends CI_Model{
 
     public function getAllKomplain(){
         return $this->db->get('komplain_nonmarket')->result_array();
@@ -33,5 +33,5 @@ class nonmarket_model extends CI_Model{
         ];
         $this->db->insert('pemesanan' ,$data2);
     }
-    
+
 }

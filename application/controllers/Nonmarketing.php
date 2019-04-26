@@ -5,16 +5,16 @@ class Nonmarketing extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('nonmarket_model');
+        $this->load->model('Nonmarket_model');
     }
 
     public function komplain(){
-        $data['komplain_nonmarket'] = $this->nonmarket_model->getAllKomplain();
+        $data['komplain_nonmarket'] = $this->Nonmarket_model->getAllKomplain();
         $this->load->view('nonmarket/komplain',$data);
   	}
 
     public function pemesanan(){
-        $data2['pemesanan'] = $this->nonmarket_model->getAllPemesanan();
+        $data2['pemesanan'] = $this->Nonmarket_model->getAllPemesanan();
         $this->load->view('nonmarket/pemesanan',$data2);
     }
 
@@ -29,7 +29,7 @@ class Nonmarketing extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
            $this->load->view('nonmarket/tambah');
         } else {
-            $this->nonmarket_model->tambahDataKomplain();
+            $this->Nonmarket_model->tambahDataKomplain();
             redirect('nonmarket/komplain');
         }
     }
@@ -43,7 +43,7 @@ class Nonmarketing extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
           $this->load->view('nonmarket/tambah_pemesanan');
         } else {
-          $this->nonmarket_model->tambahDataPemesanan();
+          $this->Nonmarket_model->tambahDataPemesanan();
           redirect('nonmarket/pemesanan');
         }
     }
