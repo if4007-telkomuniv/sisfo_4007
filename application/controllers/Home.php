@@ -32,4 +32,13 @@ class Home extends CI_Controller {
 		$this->load->view('home', $data);
 		$this->load->view('footer_main');
 	}
+
+	public function pemesanan_nonmarket(){
+		$this->load->view("pemesanan_nonmarket");
+	}
+
+	public function komplain_nonMarket(){
+		$this->load->view("komplain_nonMarket");
+	}
+
 }
