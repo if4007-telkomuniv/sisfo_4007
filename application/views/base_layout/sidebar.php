@@ -77,11 +77,37 @@
                 </a>
               </ul>
             </div>
-            <a href="<?php echo base_url()?>DSP/index">
+
+            <a href="#dsp_service" data-toggle="collapse">
               <li>
                 <ion-icon name="git-branch"></ion-icon><text>Strategic Portfolio</text>
               </li>
             </a>
+            <div id="dsp_service" class="collapse tree-dropdown">
+              <ul>
+                <a href="<?php echo base_url()?>tp_C/index">
+                  <li>
+                    <text>Tagihan Pelanggan</text>
+                  </li>
+                </a>
+                <a href="<?php echo base_url()?>spk_C/index">
+                  <li>
+                    <text>Surat Perintah Kerja</text>
+                  </li>
+                </a>
+                <a href="<?php echo base_url()?>bp_C/index">
+                  <li>
+                    <text>Blanko Pengeluaran</text>
+                  </li>
+                </a>
+                <a href="<?php echo base_url()?>grafik_C/index">
+                  <li>
+                    <text>Grafik Strategi</text>
+                  </li>
+                </a>
+              </ul>
+            </div>
+
             <a href="#who_service" data-toggle="collapse">
               <li>
                 <ion-icon name="cube"></ion-icon><text>Wholesale</text>
