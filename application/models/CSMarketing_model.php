@@ -20,21 +20,22 @@ class CSMarketing_model extends CI_Model {
 	 */
 	public function getBanner()
 	{
-		return json_decode(file_get_contents(API_BASE_URL."/csmarketing/index_get/?param=get_banner"));
+		return json_decode($this->curl->simple_get(API_BASE_URL."/csmarketing/index_get/?param=get_banner"));
         // $query = $this->db->get('banner')->result_array();
         // return $query;
     }
 
     public function getAbout()
 	{
-		return json_decode(file_get_contents(API_BASE_URL."/csmarketing/index_get/?param=get_about"));
+		return json_decode($this->curl->simple_get(API_BASE_URL."/csmarketing/index_get/?param=get_about"));
         // $query = $this->db->get('about')->result_array();
         // return $query;
     }
 
     public function getArticle()
 	{
-		return json_decode(file_get_contents(API_BASE_URL."/csmarketing/index_get/?param=get_article"));
+		// return json_decode(file_get_contents(<link>)); diganti jadi dibawah
+		return json_decode($this->curl->simple_get(API_BASE_URL."/csmarketing/index_get/?param=get_article"));
         // $query = $this->db->get('article')->result_array();
         // return $query;
     }
