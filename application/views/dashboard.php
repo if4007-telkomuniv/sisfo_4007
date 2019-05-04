@@ -33,7 +33,7 @@
                   </div>
                   <!-- Subtitle opsional, tapi bila ingin diberi, jelaskan page anda dalam maks 8 kata -->
                   <div class="page-subtitle">
-                    Sistem Informasi Enterprise Telkom Indonesia
+                    Sistem Informasi Enterprise Telkom Indonesia <br>
                   </div>
                 </div>
                 <div class="row">
@@ -57,10 +57,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                              <?php foreach ($sdm as $sdm) : ?>
+                              <?php foreach ($sdm as $sdms) : ?>
                                 <tr>
-                                    <th><?= $sdm->nama_divisi;  ?></th>
-                                    <td><?= $sdm->jumlah_karyawan;  ?></td>
+                                    <th><?= $sdms['nama_divisi']  ?></th>
+                                    <td><?= $sdms['jumlah_karyawan'];  ?></td>
                                 </tr>
                               <?php endforeach; ?>
                             </tbody>
@@ -94,13 +94,13 @@
                               <?php foreach ($pemesanan as $pms) : ?>
                               <tr>
                                 <td>
-                                  <?= $pms->id_pemesanan;?>
+                                  <?= $pms['id_pemesanan'];?>
                                 </td>
                                 <td>
-                                  <?= $pms->nama;?>
+                                  <?= $pms['nama'];?>
                                 </td>
                                 <td>
-                                  <?= $pms->paket;?>
+                                  <?= $pms['paket'];?>
                                 </td>
                               </tr>
                               <?php endforeach; ?>
@@ -134,13 +134,13 @@
                                 <?php foreach ($status_pemasangan as $pms) : ?>
                                 <tr>
                                   <td>
-                                    <?= $pms->id_sp;?>
+                                    <?= $pms['id_sp'];?>
                                   </td>
                                   <td>
-                                    <?= $pms->id_pelanggan;?>
+                                    <?= $pms['id_pelanggan'];?>
                                   </td>
                                   <td>
-                                    <?= $pms->status_pemasangan;?>
+                                    <?= $pms['status_pemasangan'];?>
                                   </td>
                                 </tr>
                                 <?php endforeach; ?>
@@ -174,13 +174,13 @@
                                 <?php foreach ($tagihan as $pms) : ?>
                                 <tr>
                                   <td>
-                                    <?= $pms->idTagihan;?>
+                                    <?= $pms['idTagihan'];?>
                                   </td>
                                   <td>
-                                    <?= $pms->Nama;?>
+                                    <?= $pms['Nama'];?>
                                   </td>
                                   <td>
-                                    <?= $pms->Tagihan;?>
+                                    <?= $pms['Tagihan'];?>
                                   </td>
                                 </tr>
                                 <?php endforeach; ?>
@@ -215,16 +215,16 @@
                                 <?php foreach ($inventory as $pms) : ?>
                                 <tr>
                                   <td>
-                                    <?= $pms->idBarang;?>
+                                    <?= $pms['idBarang'];?>
                                   </td>
                                   <td>
-                                    <?= $pms->namaBarang;?>
+                                    <?= $pms['namaBarang'];?>
                                   </td>
                                   <td>
-                                    <?= $pms->stockBarang;?>
+                                    <?= $pms['stockBarang'];?>
                                   </td>
                                   <td>
-                                    <?= $pms->idSupplier;?>
+                                    <?= $pms['idSupplier'];?>
                                   </td>
                                 </tr>
                                 <?php endforeach; ?>

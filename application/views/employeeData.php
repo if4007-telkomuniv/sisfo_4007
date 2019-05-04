@@ -1,10 +1,10 @@
 <?php
    define('DB_SERVER', 'localhost');
-   define('DB_USERNAME', 'root');
-   define('DB_PASSWORD', '');
-   define('DB_DATABASE', 'telkom');
+   define('DB_USERNAME', 'krocolab_telkom');
+   define('DB_PASSWORD', 'hanzerudesu99');
+   define('DB_DATABASE', 'krocolab_main');
    $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
-   
+
       $sql = mysqli_query($db,"SELECT * FROM pegawai");
       $datas = array();
       while($data=mysqli_fetch_array($sql)){
@@ -59,7 +59,7 @@
                 </div>
 
                 <input type="text" id="myInput" onkeyup="searchID()" placeholder="Search by ID...">
-                
+
                 <div class="row">
                   <!-- Silakan masukkan code tampilan divisi Anda di bagian ini. -->
                   <table class="table" id="tabelPegawai">
@@ -73,9 +73,9 @@
                       </tr>
                     </thead>
                     <tbody>
-                      
+
                         <?php
-                        
+
                           foreach ($datas as $data) : ?>
                             <tr>
                             <td scope="row"> <b> <?php echo $data['idpegawai'] ?> </b></td>
@@ -84,10 +84,10 @@
                             <td> <?php echo $data['emailpegawai'] ?> </td>
                             <td> <?php echo $data['statuspegawai'] ?> </td>
                             </tr>
-                          <?php 
+                          <?php
                           endforeach;
                         ?>
-                      
+
                     </tbody>
                   </table>
                 </div>
@@ -103,7 +103,7 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      
+
                         <div class="form-group">
                           <label class="col-form-label">Employee ID :</label>
                           <input required="" type="number" class="form-control" name="eid" min="0" step="1">
@@ -128,7 +128,7 @@
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                       <input type="submit" class="btn btn-primary" name="submit" id="btnAdd" value="Add Employee" >
                     </div>
-                     
+
                     </div>
                   </div>
                 </div>
@@ -159,7 +159,7 @@
         } else {
           tr[i].style.display = "none";
         }
-      }       
+      }
     }
   }
 </script>

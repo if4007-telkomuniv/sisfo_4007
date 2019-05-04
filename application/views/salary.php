@@ -1,8 +1,8 @@
 <?php
   define('DB_SERVER', 'localhost');
-  define('DB_USERNAME', 'root');
-  define('DB_PASSWORD', '');
-  define('DB_DATABASE', 'telkom');
+  define('DB_USERNAME', 'krocolab_telkom');
+  define('DB_PASSWORD', 'hanzerudesu99');
+  define('DB_DATABASE', 'krocolab_main');
   $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 ?>
 <!DOCTYPE html>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="row">
                   <!-- Silakan masukkan code tampilan divisi Anda di bagian ini. -->
-                  <?php 
+                  <?php
                     $sql = mysqli_query($db,"SELECT * FROM pegawai WHERE statuspegawai <>'On enrollment' ");
                     $datas = array();
                     while($data=mysqli_fetch_array($sql)){
@@ -72,10 +72,10 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                
+
                                   <div class="form-group">
                                     <label class="col-form-label">Employee ID : <b> <?php echo $data['idpegawai'] ?> </b> (<?php echo $data['namapegawai'] ?>) </label>
-                                    <?php 
+                                    <?php
                                       $index = 1;
                                       $id = $data['idpegawai'];
                                       $query = mysqli_query($db,"SELECT * FROM gaji WHERE idpegawai= $id ");
@@ -94,7 +94,7 @@
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                   </div>
-                               
+
                               </div>
                             </div>
                           </div>

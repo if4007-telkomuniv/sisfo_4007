@@ -58,17 +58,17 @@
                                 Edit Article
                             </div>
                             <div class="box-body">
-                                <form action="'.base_url().'csmarketing/editArticle/'.$ar->id.'" method="post">
+                                <form action="'.base_url().'csmarketing/editArticle/'.$ar['id'].'" method="post">
                                   <div class="form-group">
                                     <label for="exampleFormControlInput1">Judul</label>
-                                    <input name="title" type="text" class="form-control" id="exampleFormControlInput1" value="'.$ar->title.'">
+                                    <input name="title" type="text" class="form-control" id="exampleFormControlInput1" value="'.$ar['title'].'">
                                   </div>
                                   <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Keterangan</label>
-                                    <textarea name="isi" class="form-control" id="exampleFormControlTextarea1" rows="3">'.$ar->isi.'</textarea>
+                                    <textarea name="isi" class="form-control" id="exampleFormControlTextarea1" rows="3">'.$ar['isi'].'</textarea>
                                   </div>
                                   <button type="submit" name="submit" class="btn btn-danger">Edit</button>
-                                  <a href="'.base_url().'csmarketing/hapusArticle/'.$ar->id.'" class="btn btn-danger">Delete</a>
+                                  <a href="'.base_url().'csmarketing/hapusArticle/'.$ar['id'].'" class="btn btn-danger">Delete</a>
                                 </form>
                               </div>';
                     }?>
@@ -79,14 +79,14 @@
                       Banner
                     </div>
                     <div class="box-body">
-                      <form action='<?= base_url()?>csmarketing/editBanner/<?= $b->id?>' method='post'>
+                      <form action='<?= base_url()?>csmarketing/editBanner/<?= $b['id']?>' method='post'>
                         <div class="form-group">
                           <label for="exampleFormControlInput1">Judul</label>
-                          <input name='title' type="text" class="form-control" id="exampleFormControlInput1" value='<?= $b->h1?>'>
+                          <input name='title' type="text" class="form-control" id="exampleFormControlInput1" value='<?= $b['h1']?>'>
                         </div>
                         <div class="form-group">
                           <label for="exampleFormControlTextarea1">Keterangan</label>
-                          <textarea name='ket' class="form-control" id="exampleFormControlTextarea1" rows="3"><?= $b->keterangan?></textarea>
+                          <textarea name='ket' class="form-control" id="exampleFormControlTextarea1" rows="3"><?= $b['keterangan']?></textarea>
                         </div>
                         <button type="submit" name="submit" class="btn btn-danger">Edit</button>
                       </form>
@@ -99,14 +99,14 @@
                       About
                     </div>
                     <div class="box-body">
-                      <form action='<?= base_url()?>csmarketing/editAbout/<?= $a->id?>' method="post">
+                      <form action='<?= base_url()?>csmarketing/editAbout/<?= $a['id']?>' method="post">
                         <div class="form-group">
                           <label for="exampleFormControlInput1">Judul</label>
-                          <input name='title' type="text" class="form-control" id="exampleFormControlInput1" value='<?= $a->title?>'>
+                          <input name='title' type="text" class="form-control" id="exampleFormControlInput1" value='<?= $a['title']?>'>
                         </div>
                         <div class="form-group">
                           <label for="exampleFormControlTextarea1">Keterangan</label>
-                          <textarea name='isi' class="form-control" id="exampleFormControlTextarea1" rows="3"><?= $a->isi?></textarea>
+                          <textarea name='isi' class="form-control" id="exampleFormControlTextarea1" rows="3"><?= $a['isi']?></textarea>
                         </div>
                         <button type="submit" name="submit" class="btn btn-danger">Edit</button>
                       </form>

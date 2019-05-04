@@ -1,15 +1,16 @@
-<!-- Karina Aulia Dini 1301164342 -->
-<?php 
+<!-- Monica Dessy Amanda 1301164452 -->
+<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 /**
-* 
+*
 */
-class bp_M extends CI_Model
+class Tp_M extends CI_Model
 {
 	public function get_data()
 	{
+		date_default_timezone_set("Asia/Jakarta");
         $this->db->select('*');
-        $this->db->from('pengeluaran');
+        $this->db->from('tagihan');
         $query = $this->db->get();
         return $query->result();
 	}

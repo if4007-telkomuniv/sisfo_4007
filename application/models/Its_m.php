@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Its_m extends CI_Model {
 
 	public function __construct(){
+		date_default_timezone_set("Asia/Jakarta");
 		parent::__construct();
 	}
 
@@ -12,21 +13,18 @@ class Its_m extends CI_Model {
 	}
 
 	public function getPelanggan(){
-		return json_decode(
-    file_get_contents(API_BASE_URL."itsupport/index_get?param=get_pelanggan"));
+		return json_decode($this->curl->simple_get(API_BASE_URL."/itsupport/index_get?param=get_pelanggan"));
 		// return $this->db->get('pelanggan');
 	}
 
 	public function getStatusPemasangan(){
-		return json_decode(
-    file_get_contents(API_BASE_URL."itsupport/index_get?param=get_status"));
+		return json_decode($this->curl->simple_get(API_BASE_URL."/itsupport/index_get?param=get_status"));
 		// $this->db->join('pelanggan', 'status_pemasangan.id_pelanggan = pelanggan.id_pelanggan');
 		// return $this->db->get('status_pemasangan');
 	}
 
 	public function getKomplain(){
-		return json_decode(
-    file_get_contents(API_BASE_URL."itsupport/index_get?param=get_komplain"));
+		return json_decode($this->curl->simple_get(API_BASE_URL."/itsupport/index_get?param=get_komplain"));
 		// return $this->db->get('komplain');
 	}
 

@@ -1,8 +1,8 @@
-<?php 
+<?php
   define('DB_SERVER', 'localhost');
-  define('DB_USERNAME', 'root');
-  define('DB_PASSWORD', '');
-  define('DB_DATABASE', 'dspweb');
+  define('DB_USERNAME', 'krocolab_telkom');
+  define('DB_PASSWORD', 'hanzerudesu99');
+  define('DB_DATABASE', 'krocolab_main');
   $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 ?>
 <!DOCTYPE html>
@@ -53,7 +53,7 @@
                             </li>
                             <li>
                                 <button id="att1" onclick="atMuncul()" class="btn btn-outline-light text-dark">
-                                Tagihan Pelanggan 
+                                Tagihan Pelanggan
                                 </button>
                             </li>
 	                      		<li>
@@ -63,10 +63,10 @@
 	                      		</li>
 	                      		<li>
 	                      			  <button id="age1" onclick="ageMuncul()" class="btn btn-outline-light text-dark">
-                                Strategi Pengeluaran 
+                                Strategi Pengeluaran
                                 </button>
 	                      		</li>
-                      	</ul> 
+                      	</ul>
                       </div>
                     </div>
                   </div>
@@ -77,13 +77,13 @@
                       </div>
                       <div class="box-body">
                         <div id="newout_container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-                        Grafik ini berisi tagihan pelanggan yang disajikan perbulan untuk menentukan perbandingan yang bertujuan untuk memonitoring minat pelanggan pada bulan tertentu, terutama saat perilisan inovasi baru. 
+                        Grafik ini berisi tagihan pelanggan yang disajikan perbulan untuk menentukan perbandingan yang bertujuan untuk memonitoring minat pelanggan pada bulan tertentu, terutama saat perilisan inovasi baru.
                       </div>
                       <div class="box-footer">
                         PT. Telkom Indonesia
                       </div>
                     </div>
-                  </div> 
+                  </div>
                   <div class="col-4"></div>
                   <div class="col-8" id="hrdiv" style=" padding-top: 10px; position: sticky;">
                     <div class="box">
@@ -98,7 +98,7 @@
                         PT. Telkom Indonesia
                       </div>
                     </div>
-                  </div> 
+                  </div>
                   <div class="col-4"></div>
                   <div class="col-8" id="age" style=" padding-top: 10px; position: sticky;">
                     <div class="box">
@@ -114,7 +114,7 @@
                       </div>
                     </div>
                   </div>
-                  
+
                 </div>
               </div>
             </div>
@@ -237,38 +237,38 @@
             title: {
                 text: 'Tagihan Pelanggan'
             },
-            <?php 
+            <?php
               $sql_a = mysqli_query($db,"SELECT * FROM test1 ORDER BY test1.id_absen ASC");
               $sql_k = mysqli_query($db,"SELECT persentase FROM test1 WHERE jabatan = 'Karyawan'");
               // $sql_m = mysqli_query($db,"SELECT persentase FROM test1 WHERE jabatan = 'Manager'");
               // $sql_v = mysqli_query($db,"SELECT persentase FROM test1 WHERE jabatan = 'Vice'");
 
               $k=0;
-              while($rowk = mysqli_fetch_array($sql_k)) {             
+              while($rowk = mysqli_fetch_array($sql_k)) {
                   $datak[$k]['persentase'] = $rowk['persentase'];
                     $k++;
               }
 
               // $m=0;
-              // while($rowm = mysqli_fetch_array($sql_m)) {             
+              // while($rowm = mysqli_fetch_array($sql_m)) {
               //     $datam[$m]['persentase'] = $rowm['persentase'];
               //       $m++;
               // }
 
               // $v=0;
-              // while($rowv = mysqli_fetch_array($sql_v)) {             
+              // while($rowv = mysqli_fetch_array($sql_v)) {
               //     $datav[$v]['persentase'] = $rowv['persentase'];
               //       $v++;
               // }
 
               $y = 0;
-              while($row_a = mysqli_fetch_array($sql_a)) {             
+              while($row_a = mysqli_fetch_array($sql_a)) {
                   $dataa[$y]['jabatan'] = $row_a['jabatan'];
                   $y++;
               }
             ?>
             subtitle: {
-                text: 'haha' 
+                text: 'haha'
             },
             xAxis: {
                 categories: [
@@ -301,14 +301,14 @@
             },
             series: [{
                 name: '<?php echo $dataa[0]['jabatan']?>',
-                data: [<?php echo $datak[0]['persentase']?>, 
-                <?php echo $datak[1]['persentase']?>, 
-                <?php echo $datak[2]['persentase']?>, 
+                data: [<?php echo $datak[0]['persentase']?>,
+                <?php echo $datak[1]['persentase']?>,
+                <?php echo $datak[2]['persentase']?>,
                 <?php echo $datak[3]['persentase']?>,
                 <?php echo $datak[4]['persentase']?> ]
 
             }
-            
+
             ]
         });
         $('#hrdiv_container').highcharts({
@@ -318,11 +318,11 @@
             title: {
                 text: 'Human Resource per Division'
             },
-            <?php 
+            <?php
               $sql = mysqli_query($db,"SELECT * FROM test");
 
               $x = 0;
-              while($row = mysqli_fetch_array($sql)) {             
+              while($row = mysqli_fetch_array($sql)) {
                   $data[$x]['nama_divisi'] = $row['nama_divisi'];
                   $data[$x]['jumlah_karyawan'] = $row['jumlah_karyawan'];
                   $x++;
@@ -375,7 +375,7 @@
                     showInLegend: true
                 }
             },
-            <?php 
+            <?php
               $sql_u1 = mysqli_query($db,"SELECT COUNT(start) FROM skp WHERE start = '2019-04-24'");
               $sql_u2 = mysqli_query($db,"SELECT COUNT(start) FROM skp WHERE start = '2019-04-30'");
               // $sql_u3 = mysqli_query($db,"SELECT COUNT(umur) FROM karyawan WHERE umur >=26 and umur <=30 ");
@@ -389,7 +389,7 @@
               // $dataUmur4 = mysqli_fetch_array($sql_u4);
               // $dataUmur5 = mysqli_fetch_array($sql_u5);
               // $dataUmur6 = mysqli_fetch_array($sql_u6);
-           
+
             ?>
             series: [{
                 name: 'Presentase',
@@ -416,11 +416,11 @@
               subtitle: {
                   text: 'Month March'
               },
-              <?php 
+              <?php
               $sql2 = mysqli_query($db,"SELECT * FROM test");
 
               $x2 = 0;
-              while($row2 = mysqli_fetch_array($sql2)) {             
+              while($row2 = mysqli_fetch_array($sql2)) {
                   $data2[$x2]['nama_divisi'] = $row2['nama_divisi'];
                   $data2[$x2]['Aktivitas'] = $row2['Aktivitas'];
                   $data2[$x2]['Solidaritas'] = $row2['Solidaritas'];
@@ -431,10 +431,10 @@
               }
             ?>
               xAxis: {
-                  categories: ['<?php echo $data2[0]['nama_divisi'] ?>', 
-                  '<?php echo $data2[1]['nama_divisi'] ?>', 
-                  '<?php echo $data2[2]['nama_divisi'] ?>', 
-                  '<?php echo $data2[3]['nama_divisi'] ?>', 
+                  categories: ['<?php echo $data2[0]['nama_divisi'] ?>',
+                  '<?php echo $data2[1]['nama_divisi'] ?>',
+                  '<?php echo $data2[2]['nama_divisi'] ?>',
+                  '<?php echo $data2[3]['nama_divisi'] ?>',
                   '<?php echo $data2[4]['nama_divisi'] ?>'],
                   title: {
                       text: null
@@ -476,38 +476,38 @@
               },
               series: [{
                   name: 'Activity',
-                  data: [<?php echo $data2[0]['Aktivitas'] ?>, 
-                  <?php echo $data2[1]['Aktivitas'] ?>, 
-                  <?php echo $data2[2]['Aktivitas'] ?>, 
-                  <?php echo $data2[3]['Aktivitas'] ?>, 
+                  data: [<?php echo $data2[0]['Aktivitas'] ?>,
+                  <?php echo $data2[1]['Aktivitas'] ?>,
+                  <?php echo $data2[2]['Aktivitas'] ?>,
+                  <?php echo $data2[3]['Aktivitas'] ?>,
                   <?php echo $data2[4]['Aktivitas'] ?>]
               }, {
                   name: 'Solidarity',
-                  data: [<?php echo $data2[0]['Solidaritas'] ?>, 
-                  <?php echo $data2[1]['Solidaritas'] ?>, 
-                  <?php echo $data2[2]['Solidaritas'] ?>, 
-                  <?php echo $data2[3]['Solidaritas'] ?>, 
+                  data: [<?php echo $data2[0]['Solidaritas'] ?>,
+                  <?php echo $data2[1]['Solidaritas'] ?>,
+                  <?php echo $data2[2]['Solidaritas'] ?>,
+                  <?php echo $data2[3]['Solidaritas'] ?>,
                   <?php echo $data2[4]['Solidaritas'] ?>]
               }, {
                   name: 'Output',
-                  data: [<?php echo $data2[0]['Output'] ?>, 
-                  <?php echo $data2[1]['Output'] ?>, 
-                  <?php echo $data2[2]['Output'] ?>, 
-                  <?php echo $data2[3]['Output'] ?>, 
+                  data: [<?php echo $data2[0]['Output'] ?>,
+                  <?php echo $data2[1]['Output'] ?>,
+                  <?php echo $data2[2]['Output'] ?>,
+                  <?php echo $data2[3]['Output'] ?>,
                   <?php echo $data2[4]['Output'] ?>]
               }, {
                   name: 'Performance',
-                  data: [<?php echo $data2[0]['Performansi'] ?>, 
-                  <?php echo $data2[1]['Performansi'] ?>, 
-                  <?php echo $data2[2]['Performansi'] ?>, 
-                  <?php echo $data2[3]['Performansi'] ?>, 
+                  data: [<?php echo $data2[0]['Performansi'] ?>,
+                  <?php echo $data2[1]['Performansi'] ?>,
+                  <?php echo $data2[2]['Performansi'] ?>,
+                  <?php echo $data2[3]['Performansi'] ?>,
                   <?php echo $data2[4]['Performansi'] ?>]
               },{
                   name: 'Others',
-                  data: [<?php echo $data2[0]['lainnya'] ?>, 
-                  <?php echo $data2[1]['lainnya'] ?>, 
-                  <?php echo $data2[2]['lainnya'] ?>, 
-                  <?php echo $data2[3]['lainnya'] ?>, 
+                  data: [<?php echo $data2[0]['lainnya'] ?>,
+                  <?php echo $data2[1]['lainnya'] ?>,
+                  <?php echo $data2[2]['lainnya'] ?>,
+                  <?php echo $data2[3]['lainnya'] ?>,
                   <?php echo $data2[4]['lainnya'] ?>]
               }]
           });
@@ -521,10 +521,10 @@
             subtitle: {
                 text: 'Tahun 2019'
             },
-            <?php 
+            <?php
               $sql_n = mysqli_query($db,"SELECT * FROM tagihan");
               $a = 0;
-              while($row_n = mysqli_fetch_array($sql_n)) {             
+              while($row_n = mysqli_fetch_array($sql_n)) {
                   // $datan[$a]['jumlah_pecat'] = $row_n['jumlah_pecat'];
                   $datan[$a]['Tagihan'] = $row_n['Tagihan'];
                   $datan[$a]['bulan'] = $row_n['bulan'];
@@ -570,17 +570,17 @@
             series: [{
                 name: 'Total Tagihan',
                 data: [
-                <?php echo $datan[0]["Tagihan"] ?>, 
-                <?php echo $datan[1]["Tagihan"] ?>, 
-                <?php echo $datan[2]["Tagihan"] ?>, 
-                <?php echo $datan[3]["Tagihan"] ?>, 
-                <?php echo $datan[4]["Tagihan"] ?>, 
-                <?php echo $datan[5]["Tagihan"] ?>, 
-                <?php echo $datan[6]["Tagihan"] ?>, 
-                <?php echo $datan[7]["Tagihan"] ?>, 
-                <?php echo $datan[8]["Tagihan"] ?>, 
+                <?php echo $datan[0]["Tagihan"] ?>,
+                <?php echo $datan[1]["Tagihan"] ?>,
+                <?php echo $datan[2]["Tagihan"] ?>,
+                <?php echo $datan[3]["Tagihan"] ?>,
+                <?php echo $datan[4]["Tagihan"] ?>,
+                <?php echo $datan[5]["Tagihan"] ?>,
+                <?php echo $datan[6]["Tagihan"] ?>,
+                <?php echo $datan[7]["Tagihan"] ?>,
+                <?php echo $datan[8]["Tagihan"] ?>,
                 <?php echo $datan[9]["Tagihan"] ?>,
-                <?php echo $datan[10]["Tagihan"] ?>, 
+                <?php echo $datan[10]["Tagihan"] ?>,
                 <?php echo $datan[11]["Tagihan"] ?>]
 
             }]
@@ -596,10 +596,10 @@
             subtitle: {
                 text: 'Tahun 2019'
             },
-            <?php 
+            <?php
               $sql_n = mysqli_query($db,"SELECT * FROM pengeluaran");
               $a = 0;
-              while($row_n = mysqli_fetch_array($sql_n)) {             
+              while($row_n = mysqli_fetch_array($sql_n)) {
                   // $datan[$a]['jumlah_pecat'] = $row_n['jumlah_pecat'];
                   $datan[$a]['harga'] = ($row_n['harga']*$row_n['unit']);
                   $datan[$a]['nama'] = $row_n['nama'];
@@ -616,7 +616,7 @@
                     '<?php echo $datan[5]["nama"] ?>',
                     '<?php echo $datan[6]["nama"] ?>',
                     '<?php echo $datan[7]["nama"] ?>'
-                    
+
                 ]
             },
             yAxis: {
@@ -642,20 +642,20 @@
             series: [{
                 name: 'Total Pengeluaran',
                 data: [
-                <?php echo $datan[0]["harga"] ?>, 
-                <?php echo $datan[1]["harga"] ?>, 
-                <?php echo $datan[2]["harga"] ?>, 
-                <?php echo $datan[3]["harga"] ?>, 
-                <?php echo $datan[4]["harga"] ?>, 
-                <?php echo $datan[5]["harga"] ?>, 
-                <?php echo $datan[6]["harga"] ?>, 
-                <?php echo $datan[7]["harga"] ?> 
+                <?php echo $datan[0]["harga"] ?>,
+                <?php echo $datan[1]["harga"] ?>,
+                <?php echo $datan[2]["harga"] ?>,
+                <?php echo $datan[3]["harga"] ?>,
+                <?php echo $datan[4]["harga"] ?>,
+                <?php echo $datan[5]["harga"] ?>,
+                <?php echo $datan[6]["harga"] ?>,
+                <?php echo $datan[7]["harga"] ?>
                 ]
 
             }]
         });
 
-        
+
     });
   </script>
 </html>

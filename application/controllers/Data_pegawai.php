@@ -24,10 +24,10 @@ class Data_pegawai extends CI_Controller {
 	}
 	public function addEmployee()
     {
-    	define('DB_SERVER', 'localhost');
-   		define('DB_USERNAME', 'root');
-   		define('DB_PASSWORD', '');
-   		define('DB_DATABASE', 'telkom');
+			define('DB_SERVER', 'localhost');
+	    define('DB_USERNAME', 'krocolab_telkom');
+	    define('DB_PASSWORD', 'hanzerudesu99');
+	    define('DB_DATABASE', 'krocolab_main');
    		$db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 
    		if(isset($_POST['eid']) && isset($_POST['ename']) && isset($_POST['egender']) && isset($_POST['eemail']))
@@ -37,7 +37,7 @@ class Data_pegawai extends CI_Controller {
         $email = $_POST['eemail'];
 
         $query = "INSERT INTO pegawai VALUES ($id, '$nama', '$gender', '$email', 'On enrollment', 0)";
-        
+
         if($result=mysqli_query($db,$query)) {
         	echo "<script> alert('Employee added succesfully.') </script>";
         	echo "<script type='text/javascript'> location.href = 'http://localhost/sisfo_4007/Data_pegawai/index';</script>";
@@ -45,6 +45,6 @@ class Data_pegawai extends CI_Controller {
         	echo "<script> alert('Sorry, something goes wrong. Employee can not be added.') </script>";
         	echo "<script type='text/javascript'> location.href = 'http://localhost/sisfo_4007/Data_pegawai/index';</script>";
         }
-        
+
     }
 }

@@ -9,6 +9,7 @@
 
     <!-- Contoh cara input css, ganti sesuai kebutuhan -->
     <?php /* echo link_tag('css/base_styles.css') */ ?>
+    <?php //echo link_tag('assets/css/jquery.dataTables.css') ?>
     <link rel="stylesheet" type="text/css" href="assets/css/jquery.dataTables.css">
   </head>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -18,7 +19,7 @@
             <p style="margin-top: 2%; font-size: 34px; text-align: center;"><b>Blanko Pengeluaran</b></p><br><br>
               <div class=""></div>
                 <script src="Chart.bundle.js"></script>
- 
+
                 <style type="text/css">
                    .container {
                         width: 100%;
@@ -91,17 +92,10 @@
                                             <tbody>
                                               <tr>
                                                 <?php $no=1; foreach($pengeluaran as $data){
-                                                  echo "
-                                                  <tr>
-                                                  <td>$no</td>
-                                                  <td>$data->idPengeluaran</td>
-                                                  <td>$data->nama</td>
-                                                  <td>$data->unit</td>
-                                                  <td>$data->harga</td>
-                                                  </tr>";
+                                                  echo "<tr><td>$no</td><td>$data->idPengeluaran</td><td>$data->nama</td><td>$data->unit</td><td>$data->harga</td></tr>";
                                                   $no++; } ?>
                                               </tr>
-                                            </tbody> 
+                                            </tbody>
                                         </table>
                                     </div>
 

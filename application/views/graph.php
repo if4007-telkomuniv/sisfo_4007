@@ -1,8 +1,8 @@
-<?php 
+<?php
   define('DB_SERVER', 'localhost');
-  define('DB_USERNAME', 'root');
-  define('DB_PASSWORD', '');
-  define('DB_DATABASE', 'telkom');
+  define('DB_USERNAME', 'krocolab_telkom');
+  define('DB_PASSWORD', 'hanzerudesu99');
+  define('DB_DATABASE', 'krocolab_main');
   $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 ?>
 <!DOCTYPE html>
@@ -48,35 +48,35 @@
                       	<ul>
                             <li>
                                 <button id="all1" onclick="Muncul()" class="btn btn-outline-light text-dark" style="background-color: #ee1e24">
-                                All 
+                                All
                                 </button>
                             </li>
                             <li>
                                 <button id="att1" onclick="atMuncul()" class="btn btn-outline-light text-dark">
-                                Attendance 
+                                Attendance
                                 </button>
                             </li>
 	                      		<li>
 	                      			  <button id="hrdiv1" onclick="hrMuncul()" class="btn btn-outline-light text-dark">
-                                HR by Division 
+                                HR by Division
                                 </button>
 	                      		</li>
 	                      		<li>
 	                      			  <button id="age1" onclick="ageMuncul()" class="btn btn-outline-light text-dark">
-                                Age Ratio 
+                                Age Ratio
                                 </button>
 	                      		</li>
 	                      		<li>
 	                      			  <button id="divperf1" onclick="divMuncul()" class="btn btn-outline-light text-dark">
-                                Division Performance 
+                                Division Performance
                                 </button>
 	                      		</li>
 	                      		<li>
 	                      			  <button id="newout1" onclick="newoutMuncul()" class="btn btn-outline-light text-dark">
-                                Suspension and Newcomer Ratio 
+                                Suspension and Newcomer Ratio
                                 </button>
 	                      		</li>
-                      	</ul> 
+                      	</ul>
                       </div>
                     </div>
                   </div>
@@ -93,7 +93,7 @@
                         PT. Telkom Indonesia
                       </div>
                     </div>
-                  </div> 
+                  </div>
                   <div class="col-4"></div>
                   <div class="col-8" id="hrdiv" style=" padding-top: 10px; position: sticky;">
                     <div class="box">
@@ -108,7 +108,7 @@
                         PT. Telkom Indonesia
                       </div>
                     </div>
-                  </div> 
+                  </div>
                   <div class="col-4"></div>
                   <div class="col-8" id="age" style=" padding-top: 10px; position: sticky;">
                     <div class="box">
@@ -153,7 +153,7 @@
                         PT. Telkom Indonesia
                       </div>
                     </div>
-                  </div>    
+                  </div>
                 </div>
               </div>
             </div>
@@ -276,39 +276,39 @@
             title: {
                 text: 'Employee Attendance'
             },
-            <?php 
+            <?php
               $sql_a = mysqli_query($db,"SELECT * FROM absensi ORDER BY absensi.id_absen ASC");
               $sql_k = mysqli_query($db,"SELECT persentase FROM absensi WHERE jabatan = 'Karyawan'");
               $sql_m = mysqli_query($db,"SELECT persentase FROM absensi WHERE jabatan = 'Manager'");
               $sql_v = mysqli_query($db,"SELECT persentase FROM absensi WHERE jabatan = 'Vice'");
 
               $k=0;
-              while($rowk = mysqli_fetch_array($sql_k)) {             
+              while($rowk = mysqli_fetch_array($sql_k)) {
                   $datak[$k]['persentase'] = $rowk['persentase'];
                     $k++;
               }
 
               $m=0;
-              while($rowm = mysqli_fetch_array($sql_m)) {             
+              while($rowm = mysqli_fetch_array($sql_m)) {
                   $datam[$m]['persentase'] = $rowm['persentase'];
                     $m++;
               }
 
               $v=0;
-              while($rowv = mysqli_fetch_array($sql_v)) {             
+              while($rowv = mysqli_fetch_array($sql_v)) {
                   $datav[$v]['persentase'] = $rowv['persentase'];
                     $v++;
               }
 
               $y = 0;
-              while($row_a = mysqli_fetch_array($sql_a)) {             
+              while($row_a = mysqli_fetch_array($sql_a)) {
                   $dataa[$y]['jabatan'] = $row_a['jabatan'];
                   $dataa[$y]['bulan'] = $row_a['bulan'];
                   $y++;
               }
             ?>
             subtitle: {
-                text: 'Month <?php echo $dataa[0]['bulan']?>' 
+                text: 'Month <?php echo $dataa[0]['bulan']?>'
             },
             xAxis: {
                 categories: [
@@ -341,25 +341,25 @@
             },
             series: [{
                 name: '<?php echo $dataa[0]['jabatan']?>',
-                data: [<?php echo $datak[0]['persentase']?>, 
-                <?php echo $datak[1]['persentase']?>, 
-                <?php echo $datak[2]['persentase']?>, 
+                data: [<?php echo $datak[0]['persentase']?>,
+                <?php echo $datak[1]['persentase']?>,
+                <?php echo $datak[2]['persentase']?>,
                 <?php echo $datak[3]['persentase']?>,
                 <?php echo $datak[4]['persentase']?> ]
 
             }, {
                 name: '<?php echo $dataa[1]['jabatan']?>',
-                data: [<?php echo $datam[0]['persentase']?>, 
-                <?php echo $datam[1]['persentase']?>, 
-                <?php echo $datam[2]['persentase']?>, 
+                data: [<?php echo $datam[0]['persentase']?>,
+                <?php echo $datam[1]['persentase']?>,
+                <?php echo $datam[2]['persentase']?>,
                 <?php echo $datam[3]['persentase']?>,
                 <?php echo $datam[4]['persentase']?> ]
 
             }, {
                 name: '<?php echo $dataa[2]['jabatan']?>',
-                data: [<?php echo $datav[0]['persentase']?>, 
-                <?php echo $datav[1]['persentase']?>, 
-                <?php echo $datav[2]['persentase']?>, 
+                data: [<?php echo $datav[0]['persentase']?>,
+                <?php echo $datav[1]['persentase']?>,
+                <?php echo $datav[2]['persentase']?>,
                 <?php echo $datav[3]['persentase']?>,
                 <?php echo $datav[4]['persentase']?> ]
 
@@ -372,11 +372,11 @@
             title: {
                 text: 'Human Resource per Division'
             },
-            <?php 
+            <?php
               $sql = mysqli_query($db,"SELECT * FROM sdm");
 
               $x = 0;
-              while($row = mysqli_fetch_array($sql)) {             
+              while($row = mysqli_fetch_array($sql)) {
                   $data[$x]['nama_divisi'] = $row['nama_divisi'];
                   $data[$x]['jumlah_karyawan'] = $row['jumlah_karyawan'];
                   $x++;
@@ -428,7 +428,7 @@
                     showInLegend: true
                 }
             },
-            <?php 
+            <?php
               $sql_u1 = mysqli_query($db,"SELECT COUNT(umur) FROM karyawan WHERE umur < 20 ");
               $sql_u2 = mysqli_query($db,"SELECT COUNT(umur) FROM karyawan WHERE umur >=20 and umur <=25 ");
               $sql_u3 = mysqli_query($db,"SELECT COUNT(umur) FROM karyawan WHERE umur >=26 and umur <=30 ");
@@ -442,7 +442,7 @@
               $dataUmur4 = mysqli_fetch_array($sql_u4);
               $dataUmur5 = mysqli_fetch_array($sql_u5);
               $dataUmur6 = mysqli_fetch_array($sql_u6);
-           
+
             ?>
             series: [{
                 name: 'Age',
@@ -480,11 +480,11 @@
               subtitle: {
                   text: 'Month March'
               },
-              <?php 
+              <?php
               $sql2 = mysqli_query($db,"SELECT * FROM sdm");
 
               $x2 = 0;
-              while($row2 = mysqli_fetch_array($sql2)) {             
+              while($row2 = mysqli_fetch_array($sql2)) {
                   $data2[$x2]['nama_divisi'] = $row2['nama_divisi'];
                   $data2[$x2]['Aktivitas'] = $row2['Aktivitas'];
                   $data2[$x2]['Solidaritas'] = $row2['Solidaritas'];
@@ -495,10 +495,10 @@
               }
             ?>
               xAxis: {
-                  categories: ['<?php echo $data2[0]['nama_divisi'] ?>', 
-                  '<?php echo $data2[1]['nama_divisi'] ?>', 
-                  '<?php echo $data2[2]['nama_divisi'] ?>', 
-                  '<?php echo $data2[3]['nama_divisi'] ?>', 
+                  categories: ['<?php echo $data2[0]['nama_divisi'] ?>',
+                  '<?php echo $data2[1]['nama_divisi'] ?>',
+                  '<?php echo $data2[2]['nama_divisi'] ?>',
+                  '<?php echo $data2[3]['nama_divisi'] ?>',
                   '<?php echo $data2[4]['nama_divisi'] ?>'],
                   title: {
                       text: null
@@ -540,38 +540,38 @@
               },
               series: [{
                   name: 'Activity',
-                  data: [<?php echo $data2[0]['Aktivitas'] ?>, 
-                  <?php echo $data2[1]['Aktivitas'] ?>, 
-                  <?php echo $data2[2]['Aktivitas'] ?>, 
-                  <?php echo $data2[3]['Aktivitas'] ?>, 
+                  data: [<?php echo $data2[0]['Aktivitas'] ?>,
+                  <?php echo $data2[1]['Aktivitas'] ?>,
+                  <?php echo $data2[2]['Aktivitas'] ?>,
+                  <?php echo $data2[3]['Aktivitas'] ?>,
                   <?php echo $data2[4]['Aktivitas'] ?>]
               }, {
                   name: 'Solidarity',
-                  data: [<?php echo $data2[0]['Solidaritas'] ?>, 
-                  <?php echo $data2[1]['Solidaritas'] ?>, 
-                  <?php echo $data2[2]['Solidaritas'] ?>, 
-                  <?php echo $data2[3]['Solidaritas'] ?>, 
+                  data: [<?php echo $data2[0]['Solidaritas'] ?>,
+                  <?php echo $data2[1]['Solidaritas'] ?>,
+                  <?php echo $data2[2]['Solidaritas'] ?>,
+                  <?php echo $data2[3]['Solidaritas'] ?>,
                   <?php echo $data2[4]['Solidaritas'] ?>]
               }, {
                   name: 'Output',
-                  data: [<?php echo $data2[0]['Output'] ?>, 
-                  <?php echo $data2[1]['Output'] ?>, 
-                  <?php echo $data2[2]['Output'] ?>, 
-                  <?php echo $data2[3]['Output'] ?>, 
+                  data: [<?php echo $data2[0]['Output'] ?>,
+                  <?php echo $data2[1]['Output'] ?>,
+                  <?php echo $data2[2]['Output'] ?>,
+                  <?php echo $data2[3]['Output'] ?>,
                   <?php echo $data2[4]['Output'] ?>]
               }, {
                   name: 'Performance',
-                  data: [<?php echo $data2[0]['Performansi'] ?>, 
-                  <?php echo $data2[1]['Performansi'] ?>, 
-                  <?php echo $data2[2]['Performansi'] ?>, 
-                  <?php echo $data2[3]['Performansi'] ?>, 
+                  data: [<?php echo $data2[0]['Performansi'] ?>,
+                  <?php echo $data2[1]['Performansi'] ?>,
+                  <?php echo $data2[2]['Performansi'] ?>,
+                  <?php echo $data2[3]['Performansi'] ?>,
                   <?php echo $data2[4]['Performansi'] ?>]
               },{
                   name: 'Others',
-                  data: [<?php echo $data2[0]['lainnya'] ?>, 
-                  <?php echo $data2[1]['lainnya'] ?>, 
-                  <?php echo $data2[2]['lainnya'] ?>, 
-                  <?php echo $data2[3]['lainnya'] ?>, 
+                  data: [<?php echo $data2[0]['lainnya'] ?>,
+                  <?php echo $data2[1]['lainnya'] ?>,
+                  <?php echo $data2[2]['lainnya'] ?>,
+                  <?php echo $data2[3]['lainnya'] ?>,
                   <?php echo $data2[4]['lainnya'] ?>]
               }]
           });
@@ -585,10 +585,10 @@
             subtitle: {
                 text: 'Year 2018'
             },
-            <?php 
+            <?php
               $sql_n = mysqli_query($db,"SELECT * FROM status_karyawan");
               $a = 0;
-              while($row_n = mysqli_fetch_array($sql_n)) {             
+              while($row_n = mysqli_fetch_array($sql_n)) {
                   $datan[$a]['jumlah_pecat'] = $row_n['jumlah_pecat'];
                   $datan[$a]['jumlah_baru'] = $row_n['jumlah_baru'];
                   $datan[$a]['bulan'] = $row_n['bulan'];
@@ -635,32 +635,32 @@
                 name: 'Fired Employees',
                 data: [
                 <?php echo $datan[0]["jumlah_pecat"] ?>,
-                <?php echo $datan[1]["jumlah_pecat"] ?>, 
-                <?php echo $datan[2]["jumlah_pecat"] ?>, 
-                <?php echo $datan[3]["jumlah_pecat"] ?>, 
-                <?php echo $datan[4]["jumlah_pecat"] ?>, 
-                <?php echo $datan[5]["jumlah_pecat"] ?>, 
-                <?php echo $datan[6]["jumlah_pecat"] ?>, 
-                <?php echo $datan[7]["jumlah_pecat"] ?>, 
+                <?php echo $datan[1]["jumlah_pecat"] ?>,
+                <?php echo $datan[2]["jumlah_pecat"] ?>,
+                <?php echo $datan[3]["jumlah_pecat"] ?>,
+                <?php echo $datan[4]["jumlah_pecat"] ?>,
+                <?php echo $datan[5]["jumlah_pecat"] ?>,
+                <?php echo $datan[6]["jumlah_pecat"] ?>,
+                <?php echo $datan[7]["jumlah_pecat"] ?>,
                 <?php echo $datan[8]["jumlah_pecat"] ?>,
-                <?php echo $datan[9]["jumlah_pecat"] ?>, 
-                <?php echo $datan[10]["jumlah_pecat"] ?>, 
+                <?php echo $datan[9]["jumlah_pecat"] ?>,
+                <?php echo $datan[10]["jumlah_pecat"] ?>,
                 <?php echo $datan[11]["jumlah_pecat"] ?>]
 
             }, {
                 name: 'New Employees',
                 data: [
-                <?php echo $datan[0]["jumlah_baru"] ?>, 
-                <?php echo $datan[1]["jumlah_baru"] ?>, 
-                <?php echo $datan[2]["jumlah_baru"] ?>, 
-                <?php echo $datan[3]["jumlah_baru"] ?>, 
-                <?php echo $datan[4]["jumlah_baru"] ?>, 
-                <?php echo $datan[5]["jumlah_baru"] ?>, 
-                <?php echo $datan[6]["jumlah_baru"] ?>, 
-                <?php echo $datan[7]["jumlah_baru"] ?>, 
-                <?php echo $datan[8]["jumlah_baru"] ?>, 
+                <?php echo $datan[0]["jumlah_baru"] ?>,
+                <?php echo $datan[1]["jumlah_baru"] ?>,
+                <?php echo $datan[2]["jumlah_baru"] ?>,
+                <?php echo $datan[3]["jumlah_baru"] ?>,
+                <?php echo $datan[4]["jumlah_baru"] ?>,
+                <?php echo $datan[5]["jumlah_baru"] ?>,
+                <?php echo $datan[6]["jumlah_baru"] ?>,
+                <?php echo $datan[7]["jumlah_baru"] ?>,
+                <?php echo $datan[8]["jumlah_baru"] ?>,
                 <?php echo $datan[9]["jumlah_baru"] ?>,
-                <?php echo $datan[10]["jumlah_baru"] ?>, 
+                <?php echo $datan[10]["jumlah_baru"] ?>,
                 <?php echo $datan[11]["jumlah_baru"] ?>]
 
             }]

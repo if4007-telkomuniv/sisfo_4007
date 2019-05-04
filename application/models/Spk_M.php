@@ -1,13 +1,14 @@
 <!-- Haifa Salsabila 1301160170 -->
-<?php 
+<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 /**
-* 
+*
 */
-class spk_M extends CI_Model
+class Spk_M extends CI_Model
 {
 	public function get_data()
 	{
+		date_default_timezone_set("Asia/Jakarta");
         $this->db->limit(1);
         $this->db->order_by('idSKP','desc');
         $query = $this->db->get('skp');
@@ -16,6 +17,7 @@ class spk_M extends CI_Model
 
 	public function save_data($data)
 	{
+		date_default_timezone_set("Asia/Jakarta");
 		$param = array(
 					"NamaKaryawan"=>$data['nama'],
 					"NIP"=>$data['nip'],
