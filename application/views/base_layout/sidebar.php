@@ -86,17 +86,17 @@
               <ul>
                 <a href="<?=base_url('wholesale/invenmasuk');?>">
                   <li>
-                    <text>Inventory Pemasukkan</text>
+                    <text>Inventory IN</text>
                   </li>
                 </a>
                 <a href="<?=base_url('wholesale/invenkeluar');?>">
                   <li>
-                    <text>Inventory Pengeluaran</text>
+                    <text>Inventory OUT</text>
                   </li>
                 </a>
                 <a href="<?=base_url('wholesale/stock');?>">
                   <li>
-                    <text>Stock Barang</text>
+                    <text>Stock Item</text>
                   </li>
                 </a>
                 <a href="<?=base_url('wholesale/supplier');?>">

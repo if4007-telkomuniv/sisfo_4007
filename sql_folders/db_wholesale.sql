@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2019 at 09:55 PM
+-- Generation Time: Apr 27, 2019 at 02:20 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -35,6 +35,14 @@ CREATE TABLE `historyinventoryin` (
   `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `historyinventoryin`
+--
+
+INSERT INTO `historyinventoryin` (`idBarang`, `stockBarang`, `keterangan`, `tanggal`) VALUES
+('INV00001', 12, 'kabel fiber optic', '2019-04-26 20:29:10'),
+('INV00001', 10, 'kabel fiber optic', '2019-04-26 20:29:24');
+
 -- --------------------------------------------------------
 
 --
@@ -47,6 +55,14 @@ CREATE TABLE `historyinventoryout` (
   `keterangan` varchar(100) NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `historyinventoryout`
+--
+
+INSERT INTO `historyinventoryout` (`idBarang`, `stockBarang`, `keterangan`, `tanggal`) VALUES
+('INV00001', 12, 'Digunakan untuk pemasangan jaringan area 01', '2019-04-26 20:31:31'),
+('INV00001', 12, 'Digunakan untuk pemasangan jaringan area 01', '2019-04-26 20:32:09');
 
 -- --------------------------------------------------------
 
@@ -62,6 +78,13 @@ CREATE TABLE `inventory` (
   `keterangan` varchar(100) NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `inventory`
+--
+
+INSERT INTO `inventory` (`idBarang`, `namaBarang`, `stockBarang`, `idSupplier`, `keterangan`, `tanggal`) VALUES
+('INV00001', 'Ribbon Boots FO Cable', 234, 'SP0001', 'kabel fiber optic', '2019-04-26 20:32:09');
 
 -- --------------------------------------------------------
 
@@ -81,7 +104,8 @@ CREATE TABLE `kategori` (
 
 INSERT INTO `kategori` (`idKategori`, `namaKategori`, `keterangan`) VALUES
 ('KT0000001', 'Router', ''),
-('KT0000002', 'LAN Cable', '');
+('KT0000002', 'LAN Cable', ''),
+('KT0000003', 'Fiber Optic', 'Kabel-kabel fiber optic\r\n');
 
 -- --------------------------------------------------------
 
@@ -98,20 +122,16 @@ CREATE TABLE `supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `supplier`
+--
+
+INSERT INTO `supplier` (`idSupplier`, `namaSupplier`, `deskripsi`, `idKategori`, `status`) VALUES
+('SP0001', 'Shnihoo', 'Supplier kabel fiber optic indonesia', 'KT0000003', 1),
+('SP0002', 'Shnihooo', 'Supplier kabel fiber optic indonesia	', 'KT0000003', 1);
+
+--
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `historyinventoryin`
---
-ALTER TABLE `historyinventoryin`
-  ADD PRIMARY KEY (`idBarang`);
-
---
--- Indexes for table `historyinventoryout`
---
-ALTER TABLE `historyinventoryout`
-  ADD PRIMARY KEY (`idBarang`);
 
 --
 -- Indexes for table `inventory`

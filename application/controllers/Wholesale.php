@@ -72,8 +72,15 @@ class Wholesale extends CI_Controller {
 			$data['stockBarang'] = $this->input->post('stockBarang');
 			$data['keterangan'] = $this->input->post('keterangan');
 
+			$data1['idBarang'] = 'INV0000'.$id;
+			$data1['idSupplier'] = $this->input->post('idSupplier');
+			$data1['namaBarang'] = $this->input->post('namaBarang');
+			$data1['minstockBarang'] = $this->input->post('stockBarang');
+			$data1['keterangan'] = $this->input->post('keterangan');
+
 			$this->ModelWholesale->addInventory($data);
-			$this->ModelWholesale->addHistoryInventoryIn('historyinventoryin',$data);
+			$this->ModelWholesale->addHistoryInventoryIn('historyinventoryin',$data1);
+			redirect(base_url('wholesale/invenmasuk?q=success'), 'refresh');
 		}
 	}
 	// ---END FUNCTION FOR INVENTORY IN--- //

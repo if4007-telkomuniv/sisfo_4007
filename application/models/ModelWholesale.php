@@ -105,9 +105,10 @@ class ModelWholesale extends CI_Model{
     }
 
     public function getHistoryIn(){
-        $this->db->select('*');
+        $this->db->select('historyinventoryin.idBarang,historyinventoryin.stockBarang,historyinventoryin.keterangan,historyinventoryin.tanggal,supplier.namaSupplier');
+        $this->db->join('inventory','idBarang');
+        $this->db->join('supplier','idSupplier');
         $this->db->from('historyinventoryin');
         return $this->db->get();
     }
-}
 }

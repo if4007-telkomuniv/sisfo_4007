@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <?php $this->load->view('base_layout/head_tag'); ?>
-    <title>Ini halaman template</title>
+    <title>Inventory</title>
     <!-- Input CSS atau JS yang dibutuhkan setelah line ini -->
     <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/sc-2.0.0/datatables.min.css"/>
@@ -26,12 +26,9 @@
                 <div class="page-header">
                   <!-- Silakan replace sesuai judul halaman divisi kalian -->
                   <div class="page-title">
-                    Inventory Masuk
+                    Inventory
                   </div>
                   <!-- Subtitle opsional, tapi bila ingin diberi, jelaskan page anda dalam maks 8 kata -->
-                  <div class="page-subtitle">
-                    Form Inventory Masuk.
-                  </div>
                 </div>
                 <div class="row">
                   <!-- Silakan masukkan code tampilan divisi Anda di bagian ini. -->
@@ -48,6 +45,7 @@
                             <tr>
                               <th> Item ID</th>
                               <th> Item IN </th>
+                              <th> Supplier </th>
                               <th> Description </th>
                               <th> Date </th>
                             </tr>
@@ -60,6 +58,7 @@
                             <tr class="odd gradeX">
                               <td> <?php echo $row->idBarang; ?> </td>
                               <td style="color: green;font-weight: bold;">+<?php echo $row->stockBarang; ?> </td>
+                              <td> <?php echo $row->namaSupplier; ?> </td>
                               <td> <?php echo $row->keterangan; ?> </td>
                               <td> <?php echo $row->tanggal; ?> </td>
                             </tr>
@@ -68,9 +67,6 @@
                             ?>
                           </tbody>
                         </table>
-                      </div>
-                      <div class="box-footer">
-                        Footer
                       </div>
                     </div>
                   </div>
