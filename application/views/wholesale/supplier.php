@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <?php $this->load->view('base_layout/head_tag'); ?>
-  <title>Ini halaman template</title>
+  <title>Supplier</title>
   <!-- Input CSS atau JS yang dibutuhkan setelah line ini -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/sc-2.0.0/datatables.min.css"/>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/sc-2.0.0/datatables.min.js"></script>
@@ -108,14 +108,14 @@
                           <label for="basicinput" class="control-label">Item</label>
                           <div class="controls">
                             <select class="form-control" id="sel1" name="sel1">
-                              <?php  
+                              <?php
                               foreach($resultKategori->result() as $rowKategori):
                                 ?>
                                 <option value="<?php echo $rowKategori->idKategori; ?>"><?php echo $rowKategori->namaKategori; ?></option>
                                 <?php endforeach; ?>
                             </select>
                           </div>
-                        </div>              
+                        </div>
                         <br>
                         <div class="control-group">
                           <div class="controls">
@@ -176,7 +176,7 @@
                       </div>
                     </div>
                   </div>
-                <?php endforeach; ?> 
+                <?php endforeach; ?>
                 <?php foreach($resultJoin->result() as $row): ?>
                   <div class="modal fade" id="DE<?php echo $row->idSupplier; ?>" tabindex="-1" aria-hidden="true" style="display: : none;">
                     <div class="modal-dialog" role="dialog">
