@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2019 at 05:30 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.8
+-- Generation Time: Apr 27, 2019 at 02:20 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,14 +25,44 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `historyinventoryin`
+--
+
+CREATE TABLE `historyinventoryin` (
+  `idBarang` varchar(9) NOT NULL,
+  `stockBarang` int(11) NOT NULL,
+  `keterangan` varchar(100) NOT NULL,
+  `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `historyinventoryin`
+--
+
+INSERT INTO `historyinventoryin` (`idBarang`, `stockBarang`, `keterangan`, `tanggal`) VALUES
+('INV00001', 12, 'kabel fiber optic', '2019-04-26 20:29:10'),
+('INV00001', 10, 'kabel fiber optic', '2019-04-26 20:29:24');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `historyinventoryout`
 --
 
 CREATE TABLE `historyinventoryout` (
   `idBarang` varchar(9) NOT NULL,
   `stockBarang` int(11) NOT NULL,
-  `keterangan` varchar(100) NOT NULL
+  `keterangan` varchar(100) NOT NULL,
+  `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `historyinventoryout`
+--
+
+INSERT INTO `historyinventoryout` (`idBarang`, `stockBarang`, `keterangan`, `tanggal`) VALUES
+('INV00001', 12, 'Digunakan untuk pemasangan jaringan area 01', '2019-04-26 20:31:31'),
+('INV00001', 12, 'Digunakan untuk pemasangan jaringan area 01', '2019-04-26 20:32:09');
 
 -- --------------------------------------------------------
 
@@ -45,18 +75,16 @@ CREATE TABLE `inventory` (
   `namaBarang` varchar(50) NOT NULL,
   `stockBarang` int(11) NOT NULL,
   `idSupplier` varchar(9) NOT NULL,
-  `keterangan` varchar(100) NOT NULL
+  `keterangan` varchar(100) NOT NULL,
+  `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `inventory`
 --
 
-INSERT INTO `inventory` (`idBarang`, `namaBarang`, `stockBarang`, `idSupplier`, `keterangan`) VALUES
-('1', 'asd', 0, 'asd', ''),
-('2', '123', 123123, '123', ''),
-('3', 'asdsadsads', 2147483647, 'SB0001', ''),
-('4', 'asd12321', 22, 'SB0001', '');
+INSERT INTO `inventory` (`idBarang`, `namaBarang`, `stockBarang`, `idSupplier`, `keterangan`, `tanggal`) VALUES
+('INV00001', 'Ribbon Boots FO Cable', 234, 'SP0001', 'kabel fiber optic', '2019-04-26 20:32:09');
 
 -- --------------------------------------------------------
 
@@ -76,7 +104,8 @@ CREATE TABLE `kategori` (
 
 INSERT INTO `kategori` (`idKategori`, `namaKategori`, `keterangan`) VALUES
 ('KT0000001', 'Router', ''),
-('KT0000002', 'LAN Cable', '');
+('KT0000002', 'LAN Cable', ''),
+('KT0000003', 'Fiber Optic', 'Kabel-kabel fiber optic\r\n');
 
 -- --------------------------------------------------------
 
@@ -97,8 +126,8 @@ CREATE TABLE `supplier` (
 --
 
 INSERT INTO `supplier` (`idSupplier`, `namaSupplier`, `deskripsi`, `idKategori`, `status`) VALUES
-('SB0001', 'tes', 'tes', 'tes', 0),
-('SP0002', 'Redy', 'test', 'KT0000001', 1);
+('SP0001', 'Shnihoo', 'Supplier kabel fiber optic indonesia', 'KT0000003', 1),
+('SP0002', 'Shnihooo', 'Supplier kabel fiber optic indonesia	', 'KT0000003', 1);
 
 --
 -- Indexes for dumped tables
@@ -120,7 +149,18 @@ ALTER TABLE `kategori`
 -- Indexes for table `supplier`
 --
 ALTER TABLE `supplier`
-  ADD PRIMARY KEY (`idSupplier`);
+  ADD PRIMARY KEY (`idSupplier`),
+  ADD KEY `idKategori` (`idKategori`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `supplier`
+--
+ALTER TABLE `supplier`
+  ADD CONSTRAINT `supplier_ibfk_1` FOREIGN KEY (`idKategori`) REFERENCES `kategori` (`idKategori`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
