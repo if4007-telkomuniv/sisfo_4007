@@ -20,14 +20,37 @@ class ModelWholesale extends CI_Model{
 
     public function updateInventory($data){
     	$dataUpdate = array(
-	        'stockBarang' => $data['stockBarang']
+	        'stockBarang' => $data['sisastockBarang']
 		);
 		$this->db->where('idBarang', $data['idBarang']);
 		$this->db->update('inventory', $dataUpdate);
     }
 
+    public function updateInventoryOut($data){
+        $dataUpdate = array(
+            'stockBarang' => $data['stockBarang'],
+            'keterangan' => $data['keterangan']
+        );
+        $this->db->where('namaBarang', $data['namaBarang']);
+        $this->db->update('inventory', $dataUpdate);
+    }
+
     public function addHistoryInventory($data){
-		$this->db->insert('historyinventoryout', $data);
+        $dataInsert = array(
+            'idBarang' => $data['idBarang'],
+            'stockBarang' => $data['minstockBarang'],
+            'keterangan' => $data['keterangan']
+        );
+		$this->db->insert('HistoryInventoryOut', $dataInsert);
+    }
+
+    public function addHistoryInventoryIn($table, $data){
+        $dataInsert = array(
+            'idBarang' => $data['idBarang'],
+            'stockBarang' => $data['minstockBarang'],
+            'keterangan' => $data['keterangan']
+        );
+        $this->db->insert($table, $dataInsert);
     }
 
     public function getLenSupplier(){
@@ -56,7 +79,6 @@ class ModelWholesale extends CI_Model{
     }
 
     public function deleteSupplier($data){
-            //$this->db->delete('supplier', array('idSupplier' => $id));
         return $this->db->replace('supplier' , $data);
     }
 
@@ -69,6 +91,24 @@ class ModelWholesale extends CI_Model{
         $this->db->select('*');
         $this->db->from('inventory');
         $this->db->join('supplier','idSupplier');
+        return $this->db->get();
+    }
+    
+    public function updateBarang($data){
+        return $this->db->replace('inventory', $data);
+    }
+
+    public function getHistoryOut(){
+        $this->db->select('*');
+        $this->db->from('historyinventoryout');
+        return $this->db->get();
+    }
+
+    public function getHistoryIn(){
+        $this->db->select('historyinventoryin.idBarang,historyinventoryin.stockBarang,historyinventoryin.keterangan,historyinventoryin.tanggal,supplier.namaSupplier');
+        $this->db->join('inventory','idBarang');
+        $this->db->join('supplier','idSupplier');
+        $this->db->from('historyinventoryin');
         return $this->db->get();
     }
 }

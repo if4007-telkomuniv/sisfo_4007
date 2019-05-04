@@ -60,7 +60,7 @@
                               <td> <?php echo $row->deskripsi; ?> </td>
                               <td> <?php echo $row->namaKategori; ?> </td>
                               <td>
-                                <form action="<?php echo base_url('template/addSupplier');?>" method="POST" >
+                                <form action="<?php echo base_url('wholesale/addSupplier');?>" method="POST" >
                                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ED<?php echo $row->idSupplier; ?>"><span class="fas fa-edit"></span></button>
                                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#DE<?php echo $row->idSupplier; ?>"><span class="fas fa-trash-alt"></span></button>
                                   <!--<button class="btn btn-danger" type="submit" data-toggle="modal"><span class="fas fa-trash-alt"></span></button>
@@ -83,7 +83,7 @@
                       Add Supplier Data
                     </div>
                     <div class="box-body">
-                      <form class="form-horizontal row-fluid" action="<?php echo base_url('template/addSupplier');?>" method="POST" enctype="multipart/form-data">
+                      <form class="form-horizontal row-fluid" action="<?php echo base_url('wholesale/addSupplier');?>" method="POST" enctype="multipart/form-data">
                         <?php ?>
                         <div class="control-group">
                           <label class="control-label" for="basicinput">Supplier ID</label>
@@ -136,7 +136,7 @@
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
-                        <form class="form-horizontal row-fluid" action="<?php base_url('template/addSupplier')?>" method="POST" enctype="multipart/form-data">
+                        <form class="form-horizontal row-fluid" action="<?php base_url('wholesale/addSupplier')?>" method="POST" enctype="multipart/form-data">
                           <div class="modal-body">
                             <div class="control-group">
                               <label class="control-label" for="basicinput">Supplier ID</label>
@@ -189,7 +189,7 @@
                             <div>Are you sure you want to <b>delete Supplier ID : <?php echo $row->idSupplier; ?></b>?</div>
                           </div>
                           <div class="modal-footer">
-                            <form action="<?php echo base_url('template/addSupplier');?>" method="POST" >
+                            <form action="<?php echo base_url('wholesale/addSupplier');?>" method="POST" >
                               <input type="hidden" name="delete" value="<?php echo $row->idSupplier;?>">
                               <input type="hidden" name="namaSupplierDelete" value="<?php echo $row->namaSupplier; ?>">
                               <input type="hidden" name="deskripsiDelete" value="<?php echo $row->deskripsi; ?>">
